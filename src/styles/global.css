@@ -1,0 +1,26 @@
+:root {
+    /* Colors */
+    --background-white: #FBFBFB;
+    --box-almost-white: #F5F4F2;
+    --stroke-light-grey: #E7E7E7;
+    --stroke-dark-grey: #B2B2B2;
+    --passive-text-grey: #707070;
+    --regular-text: #3B3B3B;
+    --error-red: #A33130;
+    --brand-light-green: #6F9C46;
+    --icon-orange: #F9BE83;
+
+
+
+
+    /* Radius & Spacing */
+    --radius-xs: 4px;
+    --radius-s: 8px;
+    --radius-m: 12px;
+    --radius-l: 16px;
+    --radius-xl: 20px;
+    --radius-xxl: 24px;
+
+
+
+}
