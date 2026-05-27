@@ -21,6 +21,8 @@
     --radius-xl: 20px;
     --radius-xxl: 24px;
 
-
+    /* Typography */
+    --main-family-font: 'Inter', sans-serif;
+    --logo-family-font: 'Lemon', serif;
 
 }
