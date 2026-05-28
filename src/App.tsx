@@ -1,5 +1,6 @@
 import "./App.css";
 import SearchBar from "./components/ui/input/SearchBar";
+import CountryCircleCard from "./components/cards/CountryCircleCard";
 
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
 
    </>
 
+      <CountryCircleCard />
+    </>
   );
 }
 
