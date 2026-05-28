@@ -1,12 +1,13 @@
-import './App.css'
+import "./App.css";
+import SearchBar from "./components/ui/input/SearchBar";
 
 function App() {
-
   return (
     <>
-      <div> Hello world </div>
+      <SearchBar showCancelIcon={true} 
+      placeholderText={"Søg efter steder..."} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
