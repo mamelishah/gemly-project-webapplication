@@ -1,0 +1,47 @@
+#plan-to-travel-card {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#plan-to-travel-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#plan-to-travel-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#plan-to-travel-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: white;
+  z-index: 2;
+}
+
+#plan-to-travel-card h1 {
+  font-family: var(--main-family-font);
+  margin: 0 0 0.5rem 0;
+  font-size: 2em;
+}
+
+#plan-to-travel-card p {
+  margin: 0;
+  font-size: 1.2em;
+  font-family: var(--main-family-font);
+}
