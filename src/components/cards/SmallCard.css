@@ -12,13 +12,12 @@
 }
 
 #small-card-content {
-  padding: 1rem;
+  padding: 0rem;
 }
 
-#small-card-text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+#small-card-title {
+  font-family: var(--main-family-font);
+  font-size: larger;
 }
 
 #small-card-title-row {
@@ -31,6 +30,7 @@
   font-size: 1.2em;
   margin: 0;
   font-weight: 600;
+  padding: 0.5rem 0.5rem;
 }
 
 #small-card-location {
@@ -38,6 +38,7 @@
   align-items: center;
   font-family: var(--main-family-font);
   font-size: medium;
+  padding: 0.5rem 0.5rem;
 }
 
 #small-card p {
