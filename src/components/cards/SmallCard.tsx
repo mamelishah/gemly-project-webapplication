@@ -1,12 +1,13 @@
 import "./SmallCard.css";
 import pinIcon from "/src/assets/icons/navbar/pin-icon.svg";
 import mapLocation from "/src/assets/icons/card funktioner/mapLocation-icon.svg";
+import image from "/src/assets/images/countries/Brasilien/Brazil-main-image.png";
 
 function SmallCard() {
   return (
     <section id="small-card">
       <img
-        src="src/assets/images/countries/Brasilien/Brazil-main-image.png"
+        src={image}
         alt="Small Card"
       />
       <div id="small-card-content">
