@@ -38,7 +38,8 @@
   align-items: center;
   font-family: var(--main-family-font);
   font-size: medium;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
+
 }
 
 #small-card p {
@@ -54,7 +55,12 @@
   padding: 0;
 }
 
-#small-card button img {
-  width: 48px;
-  height: 48px;
+#small-card-pin-button {
+  width: 40px;
+  height: 40px;
+}
+
+#small-card-map-button {
+  width: 24px;
+  height: 24px;
 }
