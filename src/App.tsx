@@ -1,17 +1,17 @@
-import './App.css'
-import SmallCard from './components/cards/SmallCard'
+import "./App.css";
+import SmallCard from "./components/cards/SmallCard";
+import TopBar from "./components/ui/layout/TopBar";
 
 function App() {
-
   return (
     <>
-      <div> Hello world </div>
-      <SmallCard />
-      <SmallCard />
-      <SmallCard />
-      <SmallCard />
+      <TopBar />
+      <div style={{ display: "flex", padding: "1rem", gap: "1rem" }}>
+        <SmallCard />
+        <SmallCard />
+      </div>
     </>
   );
 }
 
-export default App
+export default App;

@@ -8,11 +8,19 @@ function SmallCard() {
         src="src/assets/images/countries/Brasilien/Brazil-main-image.png"
         alt="Small Card"
       />
-      <h1>Title</h1>
-      <p>Lokation</p>
-      <button>
-        <img src={pinIcon} alt="Pin Icon" />
-      </button>
+      <div id="small-card-content">
+        <div id="small-card-text">
+          <div id="small-card-title-row">
+            <h1>Title</h1>
+            <button>
+              <img src={pinIcon} alt="Pin Icon" />
+            </button>
+          </div>
+          <div id="small-card-location">
+            <p>Lokation</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

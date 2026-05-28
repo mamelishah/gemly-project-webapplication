@@ -1,14 +1,9 @@
-#small-card-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-}
-
 #small-card {
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
-  max-width: 300px;
+  width: 100%;
+  background-color: var(--box-almost-white);
 }
 
 #small-card img {
@@ -16,22 +11,49 @@
   height: auto;
 }
 
+#small-card-content {
+  padding: 1rem;
+}
+
+#small-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#small-card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 #small-card h1 {
-  font-size: 1.5em;
-  margin: 0.5em 0;
+  font-size: 1.2em;
+  margin: 0;
+  font-weight: 600;
+}
+
+#small-card-location {
+  display: flex;
+  align-items: center;
+  font-family: var(--main-family-font);
+  font-size: medium;
 }
 
 #small-card p {
   color: #666;
+  font-size: 1em;
+  margin: 0;
 }
 
 #small-card button {
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0;
 }
 
 #small-card button img {
-  width: 24px;
-  height: 24px;
+  width: 48px;
+  height: 48px;
 }
