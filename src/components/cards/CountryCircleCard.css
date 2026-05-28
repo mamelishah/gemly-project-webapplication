@@ -1,0 +1,22 @@
+#country-image {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.country-circle-card {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--radius-m);
+}
+
+#country-name {
+  margin: var(--radius-s) 0 0 0;
+  font-weight: lighter;
+}
