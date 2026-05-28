@@ -1,0 +1,66 @@
+#small-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  background-color: var(--box-almost-white);
+}
+
+#small-card img {
+  width: 100%;
+  height: auto;
+}
+
+#small-card-content {
+  padding: 0rem;
+}
+
+#small-card-title {
+  font-family: var(--main-family-font);
+  font-size: larger;
+}
+
+#small-card-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#small-card h1 {
+  font-size: 1.2em;
+  margin: 0;
+  font-weight: 600;
+  padding: 0.5rem 0.5rem;
+}
+
+#small-card-location {
+  display: flex;
+  align-items: center;
+  font-family: var(--main-family-font);
+  font-size: medium;
+  padding: 0.5rem;
+
+}
+
+#small-card p {
+  color: #666;
+  font-size: 1em;
+  margin: 0;
+}
+
+#small-card button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+#small-card-pin-button {
+  width: 40px;
+  height: 40px;
+}
+
+#small-card-map-button {
+  width: 24px;
+  height: 24px;
+}
