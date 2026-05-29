@@ -11,6 +11,7 @@ import addedRecently from "/src/assets/icons/Sortér efter/addedRecently-icon.sv
 import fewViews from "/src/assets/icons/Sortér efter/fewViews-icon.svg";
 import nearYou from "/src/assets/icons/Sortér efter/nearYou-icon.svg";
 import popular from "/src/assets/icons/Sortér efter/popular-icon.svg";
+import image from "/src/assets/images/countries/Frankrig/france-main-image.png";
 
 function App() {
   return (
@@ -24,7 +25,11 @@ function App() {
         <SmallCard />
         <SmallCard />
       </div>
-      <CountryCircleCard />
+
+      <div style={{ display: "flex", padding: "1rem", gap: "1rem" }}>
+        <CountryCircleCard image={image} countryName="Frankrig" />
+        <CountryCircleCard image={image} countryName="Danmark" />
+      </div>
 
       <div
         style={{
