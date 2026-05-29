@@ -4,6 +4,8 @@ import TopBar from "./components/ui/layout/TopBar";
 import SearchBar from "./components/ui/input/SearchBar";
 import CountryCircleCard from "./components/cards/CountryCircleCard";
 import PlanToTravelCard from "./components/cards/PlanToTravelCard";
+import BigCard from "./components/cards/bigCard/BigCard";
+import categoryIcon from "/src/assets/icons/kategori/category-icon.svg";  
 
 function App() {
   return (
@@ -23,6 +25,13 @@ function App() {
         <PlanToTravelCard />
         <PlanToTravelCard />
       </div>
+
+      <BigCard
+        category="Kultur"
+        location="Polen"
+        title="Overskrift"
+        categoryIcon={categoryIcon}
+      />
     </>
   );
 }
