@@ -67,7 +67,7 @@ function Explore() {
         />
       </div>
       <h1>Opdag noget nyt</h1>
-      <h2>Udforsk skjulte steder i hele verden</h2>
+      <h4>Udforsk skjulte steder i hele verden</h4>
       <div id="country-circle-card-container">
         <CountryCircleCard image={Frankrigimage} countryName="Frankrig" />
         <CountryCircleCard image={Sverigeimage} countryName="Sverige" />

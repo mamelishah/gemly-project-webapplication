@@ -5,7 +5,7 @@ function SortExploreCard({ icon, text }) {
   return (
     <div id="sort-explore-card">
       <img src={icon} alt={text} />
-      <p>{text}</p>
+      <h4>{text}</h4>
     </div>
   );
 }
