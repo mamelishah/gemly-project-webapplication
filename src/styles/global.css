@@ -22,3 +22,44 @@
   --main-family-font: "Helvetica", sans-serif;
   --logo-family-font: "Lemon", serif;
 }
+h1 {
+  font-family: var(--main-family-font);
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--regular-text);
+}
+
+h2 {
+  font-family: var(--main-family-font);
+  font-size: 1.3rem;
+  font-weight: normal;
+  color: var(--regular-text);
+}
+
+h3 {
+  font-family: var(--main-family-font);
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--regular-text);
+}
+
+h4 {
+  font-family: var(--main-family-font);
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: var(--regular-text);
+}
+
+h5 {
+  font-family: var(--main-family-font);
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: var(--regular-text);
+}
+
+h6 {
+  font-family: var(--main-family-font);
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--regular-text);
+}

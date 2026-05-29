@@ -28,7 +28,7 @@
   align-items: center;
 }
 
-#small-card h1 {
+#small-card h2 {
   font-size: 1rem;
   margin: 0;
   font-weight: 600;
@@ -43,7 +43,7 @@
   padding: 0.5rem;
 }
 
-#small-card p {
+#small-card h5 {
   color: #666;
   font-size: 1em;
   margin: 0;

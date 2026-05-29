@@ -11,7 +11,7 @@ function SmallCard({ image, title, pinIcon, location } : { image: string; title:
       <div id="small-card-content">
         <div id="small-card-title-row">
           <div id="small-card-title">
-            <h1>{title}</h1>
+            <h2>{title}</h2>
           </div>
           <button id="small-card-pin-button">
             <img src={pinIcon} alt={title} />
@@ -22,7 +22,7 @@ function SmallCard({ image, title, pinIcon, location } : { image: string; title:
           <button id="small-card-map-button">
             <img src={nearYou} alt={title} />
           </button>
-          <p> {location}</p>
+          <h5> {location}</h5>
         </div>
       </div>
     </section>
