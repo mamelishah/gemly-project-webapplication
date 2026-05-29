@@ -6,6 +6,8 @@
     background-color: var(--background-white);
     border-bottom:none;
     position: relative;
+    height: 60px;
+    width: 100%;
 }
 
 #top-bar img {
@@ -15,12 +17,12 @@
 }
 
 #top-bar h1 {
-    font-size: 18px;
-    font-weight: bold;
     position: absolute;
     margin: 0;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
 }
 
 #top-bar button {
