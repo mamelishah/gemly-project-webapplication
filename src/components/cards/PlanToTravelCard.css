@@ -3,6 +3,8 @@
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
+  width: 200px;
+  flex-shrink: 0;
 }
 
 #plan-to-travel-card::before {
