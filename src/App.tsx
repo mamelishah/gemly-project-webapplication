@@ -72,6 +72,7 @@ function App() {
           gridTemplateColumns: "repeat(2, 1fr)",
           padding: "0.5rem",
           gap: "1rem",
+          width: "100%",
         }}
       >
         <SortExploreCard icon={addedRecently} text="Tilføjet for nylig" />
@@ -79,9 +80,18 @@ function App() {
         <SortExploreCard icon={nearYou} text="Nær dig" />
         <SortExploreCard icon={popular} text="Populære steder" />
       </div>
-      <div style={{ display: "flex", padding: "1rem", gap: "1rem" }}>
-        <PlanToTravelCard />
-        <PlanToTravelCard />
+      <div
+        style={{
+          display: "flex",
+          overflowX: "auto",
+          overflowY: "hidden",
+          gap: "1rem",
+          width: "100%",
+        }}
+      >
+        <PlanToTravelCard title={"Cusco"} description={"Peru"} />
+        <PlanToTravelCard title={"Rio de Janeiro"} description={"Brasilien"} />
+        <PlanToTravelCard title={"Marrakech"} description={"Marokko"} />
       </div>
 
       <BigCard
