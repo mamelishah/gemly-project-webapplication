@@ -3,6 +3,7 @@
   border-radius: 8px;
   overflow: hidden;
   width: 200px;
+  min-width: 200px;
   flex-shrink: 0;
   background-color: var(--box-almost-white);
 }
