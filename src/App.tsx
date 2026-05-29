@@ -20,7 +20,15 @@ function App() {
         showCancelIcon={true}
         placeholderText={"Søg efter steder..."}
       />
-      <div style={{ display: "flex", padding: "1rem", gap: "1rem" }}>
+      <div
+        style={{
+          display: "flex",
+          overflowX: "auto",
+          overflowY: "hidden",
+          gap: "1rem",
+          width: "100%",
+        }}
+      >
         <SmallCard
           title={"Lokal Shop"}
           image={image}
