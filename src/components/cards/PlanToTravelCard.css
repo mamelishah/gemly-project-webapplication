@@ -40,10 +40,12 @@
   font-family: var(--main-family-font);
   margin: 0 0 0.5rem 0;
   font-size: 2em;
+  color: var(--background-white);
 }
 
-#plan-to-travel-card p {
+#plan-to-travel-card h4 {
   margin: 0;
   font-size: 1.2em;
   font-family: var(--main-family-font);
+  color: var(--background-white);
 }

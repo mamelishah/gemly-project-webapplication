@@ -6,7 +6,7 @@ function PlanToTravelCard({image, title, description}) {
       <img src={image} alt="Plan Your Trip" />
       <div id="plan-to-travel-content">
         <h1>{title}</h1>
-        <p>{description}</p>
+        <h4>{description}</h4>
       </div>
     </section>
   );
