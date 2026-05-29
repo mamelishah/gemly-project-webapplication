@@ -26,9 +26,12 @@ function App() {
         <SmallCard />
       </div>
 
-      <div style={{ display: "flex", padding: "1rem", gap: "1rem" }}>
+      <div className="country-circle-card-container">
         <CountryCircleCard image={image} countryName="Frankrig" />
         <CountryCircleCard image={image} countryName="Danmark" />
+        <CountryCircleCard image={image} countryName="Svergie" />
+        <CountryCircleCard image={image} countryName="Portugal" />
+        <CountryCircleCard image={image} countryName="Spanien" />
       </div>
 
       <div
