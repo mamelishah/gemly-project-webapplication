@@ -12,6 +12,7 @@ import fewViews from "/src/assets/icons/Sortér efter/fewViews-icon.svg";
 import nearYou from "/src/assets/icons/Sortér efter/nearYou-icon.svg";
 import popular from "/src/assets/icons/Sortér efter/popular-icon.svg";
 import image from "/src/assets/images/countries/Frankrig/france-main-image.png";
+import SavedCard from "./components/cards/savedCard/SavedCard";
 
 function App() {
   return (
@@ -55,6 +56,9 @@ function App() {
         title="Overskrift"
         categoryIcon={categoryIcon}
       />
+
+      <SavedCard title="Italien" />
+      <SavedCard title="Frankrig" />
     </>
   );
 }
