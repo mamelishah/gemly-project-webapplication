@@ -4,6 +4,8 @@ import TopBar from "./components/ui/layout/TopBar";
 import SearchBar from "./components/ui/input/SearchBar";
 import CountryCircleCard from "./components/cards/CountryCircleCard";
 import PlanToTravelCard from "./components/cards/PlanToTravelCard";
+import BigCard from "./components/cards/bigCard/BigCard";
+import categoryIcon from "/src/assets/icons/kategori/category-icon.svg";  
 import SortExploreCard from "./components/cards/SortExploreCard";
 import addedRecently from "/src/assets/icons/Sortér efter/addedRecently-icon.svg";
 import fewViews from "/src/assets/icons/Sortér efter/fewViews-icon.svg";
@@ -11,6 +13,7 @@ import nearYou from "/src/assets/icons/Sortér efter/nearYou-icon.svg";
 import popular from "/src/assets/icons/Sortér efter/popular-icon.svg";
 import image from "/src/assets/images/countries/Frankrig/france-main-image.png";
 import pinIcon from "/src/assets/icons/navbar/pin-icon.svg";
+import SavedCard from "./components/cards/savedCard/SavedCard";
 
 function App() {
   return (
@@ -54,7 +57,11 @@ function App() {
           location={"Tupiza, Bolivia"}
         />
       </div>
-      <CountryCircleCard />
+
+      <div style={{ display: "flex", padding: "1rem", gap: "1rem" }}>
+        <CountryCircleCard image={image} countryName="Frankrig" />
+        <CountryCircleCard image={image} countryName="Danmark" />
+      </div>
 
       <div
         style={{
@@ -73,6 +80,16 @@ function App() {
         <PlanToTravelCard />
         <PlanToTravelCard />
       </div>
+
+      <BigCard
+        category="Kultur"
+        location="Polen"
+        title="Overskrift"
+        categoryIcon={categoryIcon}
+      />
+
+      <SavedCard title="Italien" />
+      <SavedCard title="Frankrig" />
     </>
   );
 }
