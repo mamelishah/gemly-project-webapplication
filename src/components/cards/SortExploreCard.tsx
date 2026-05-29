@@ -1,11 +1,11 @@
-import addedRecently from "/src/assets/icons/Sortér efter/addedRecently-icon.svg";
+
 import "./SortExploreCard.css";
 
-function SortExploreCard() {
+function SortExploreCard({ icon, text }) {
   return (
     <div id="sort-explore-card">
-      <img src={addedRecently} alt="Tilføjet for nylig" />
-      <p>Tilføjet for nylig</p>
+      <img src={icon} alt={text} />
+      <p>{text}</p>
     </div>
   );
 }
