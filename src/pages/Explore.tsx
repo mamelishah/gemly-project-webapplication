@@ -1,9 +1,11 @@
-import React from 'react'
+import BottomNavigationBar from '../components/ui/layout/bottom-navigation-bar/BottomNavigationBar';
 
-function explore() {
+function Explore() {
   return (
-    <div>explore</div>
+    <>
+    <BottomNavigationBar></BottomNavigationBar>
+    </>
   )
 }
 
-export default explore
+export default Explore

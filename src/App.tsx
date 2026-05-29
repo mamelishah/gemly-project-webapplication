@@ -16,8 +16,7 @@ import Account from './pages/Account';
 
 function App() {
   return (
-    <>
-      <Routes>
+    <Routes>
       <Route path="/" element={<Explore />} />
       <Route path="/map" element={<Map />} />
       <Route path="/account" element={<Account />} />
@@ -29,8 +28,7 @@ function App() {
       <Route path="/onboarding" element={<Onboarding />} />
       <Route path="/preboarding" element={<Preboarding />} />
     </Routes>
-    </>
-  );
+  )
 }
 
 export default App;
