@@ -1,8 +1,32 @@
-import React from 'react'
+import "./Saved.css";
+import SearchBar from '../components/ui/input/SearchBar';
+import TopBar from '../components/ui/layout/TopBar';
+import SavedCard from "../components/cards/savedCard/SavedCard";
+import BottomNavigationBar from '../components/ui/layout/bottom-navigation-bar/BottomNavigationBar';
 
 function Saved() {
   return (
-    <div>Saved</div>
+    <div className="saved-page">
+      <TopBar 
+        title="Dine gemte steder"
+        showLeftIcon={false} 
+        showRightIcon={false}
+      />
+      <SearchBar 
+        showCancelIcon={true}
+        placeholderText={"Søg efter steder..."}
+      />
+      <h1>Album</h1>
+      <div className="saved-card-container">
+        <SavedCard title="Frankrig" />
+        <SavedCard title="Sverige" />
+        <SavedCard title="Tyskland" />
+        <SavedCard title="Albanien" />
+        <SavedCard title="Belgien" />
+        <SavedCard title="Portugal" />
+      </div>
+      <BottomNavigationBar />
+    </div>
   )
 }
 
