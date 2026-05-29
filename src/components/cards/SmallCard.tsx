@@ -1,9 +1,7 @@
 import "./SmallCard.css";
-import pinIcon from "/src/assets/icons/navbar/pin-icon.svg";
-import mapLocation from "/src/assets/icons/card funktioner/mapLocation-icon.svg";
-import image from "/src/assets/images/countries/Brasilien/Brazil-main-image.png";
+import nearYou from "/src/assets/icons/Sortér efter/nearYou-icon.svg";
 
-function SmallCard() {
+function SmallCard({ image, title, pinIcon, location } : { image: string; title: string; pinIcon: string; location: string }) {
   return (
     <section id="small-card">
       <img
@@ -13,18 +11,18 @@ function SmallCard() {
       <div id="small-card-content">
         <div id="small-card-title-row">
           <div id="small-card-title">
-            <h1>Title</h1>
+            <h1>{title}</h1>
           </div>
           <button id="small-card-pin-button">
-            <img src={pinIcon} alt="Pin Icon" />
+            <img src={pinIcon} alt={title} />
           </button>
         </div>
 
         <div id="small-card-location">
           <button id="small-card-map-button">
-            <img src={mapLocation} alt="Map Icon" />
+            <img src={nearYou} alt={title} />
           </button>
-          <p>Lokation</p>
+          <p> {location}</p>
         </div>
       </div>
     </section>

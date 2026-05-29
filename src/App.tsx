@@ -9,6 +9,8 @@ import addedRecently from "/src/assets/icons/Sortér efter/addedRecently-icon.sv
 import fewViews from "/src/assets/icons/Sortér efter/fewViews-icon.svg";
 import nearYou from "/src/assets/icons/Sortér efter/nearYou-icon.svg";
 import popular from "/src/assets/icons/Sortér efter/popular-icon.svg";
+import image from "/src/assets/images/countries/Frankrig/france-main-image.png";
+import pinIcon from "/src/assets/icons/navbar/pin-icon.svg";
 
 function App() {
   return (
@@ -19,8 +21,30 @@ function App() {
         placeholderText={"Søg efter steder..."}
       />
       <div style={{ display: "flex", padding: "1rem", gap: "1rem" }}>
-        <SmallCard />
-        <SmallCard />
+        <SmallCard
+          title={"Lokal Shop"}
+          image={image}
+          pinIcon={pinIcon}
+          location={"Marrakech, Marokko"}
+        />
+        <SmallCard
+          title={"Fiskershop"}
+          image={image}
+          pinIcon={pinIcon}
+          location={"Rurrenabaque, Bolivia"}
+        />
+        <SmallCard
+          title={"Lokal Marked"}
+          image={image}
+          pinIcon={pinIcon}
+          location={"Sucre, Bolivia"}
+        />
+        <SmallCard
+          title={"Ridetur"}
+          image={image}
+          pinIcon={pinIcon}
+          location={"Tupiza, Bolivia"}
+        />
       </div>
       <CountryCircleCard />
 
