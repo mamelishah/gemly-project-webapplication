@@ -5,7 +5,7 @@ import SearchBar from "./components/ui/input/SearchBar";
 import CountryCircleCard from "./components/cards/CountryCircleCard";
 import PlanToTravelCard from "./components/cards/PlanToTravelCard";
 import BigCard from "./components/cards/bigCard/BigCard";
-import categoryIcon from "/src/assets/icons/kategori/category-icon.svg";  
+import categoryIcon from "/src/assets/icons/kategori/category-icon.svg";
 import SortExploreCard from "./components/cards/SortExploreCard";
 import addedRecently from "/src/assets/icons/Sortér efter/addedRecently-icon.svg";
 import fewViews from "/src/assets/icons/Sortér efter/fewViews-icon.svg";
@@ -18,7 +18,7 @@ import SavedCard from "./components/cards/savedCard/SavedCard";
 function App() {
   return (
     <>
-      <TopBar />
+      <TopBar title="Udforsk" showLeftIcon={true} showRightIcon={false} />
       <SearchBar
         showCancelIcon={true}
         placeholderText={"Søg efter steder..."}
