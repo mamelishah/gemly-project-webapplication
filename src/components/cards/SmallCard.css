@@ -2,7 +2,8 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
-  width: 100%;
+  width: 200px;
+  flex-shrink: 0;
   background-color: var(--box-almost-white);
 }
 
@@ -27,7 +28,7 @@
 }
 
 #small-card h1 {
-  font-size: 1.2em;
+  font-size: 1rem;
   margin: 0;
   font-weight: 600;
   padding: 0.5rem 0.5rem;
@@ -39,7 +40,6 @@
   font-family: var(--main-family-font);
   font-size: medium;
   padding: 0.5rem;
-
 }
 
 #small-card p {
