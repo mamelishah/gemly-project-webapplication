@@ -1,7 +1,9 @@
 body {
-  font-family: var(--logo-family-font);
+  font-family: var(--main-family-font);
 }
 
 li {
   list-style: none;
 }
+
+

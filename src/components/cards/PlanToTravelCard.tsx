@@ -1,7 +1,6 @@
-import image from "/src/assets/images/countries/Brasilien/brazil-main-image.png";
 import "./PlanToTravelCard.css";
 
-function PlanToTravelCard({title, description}) {
+function PlanToTravelCard({image, title, description}) {
   return (
     <section id="plan-to-travel-card">
       <img src={image} alt="Plan Your Trip" />
