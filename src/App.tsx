@@ -1,19 +1,5 @@
-import "./App.css";
-import SmallCard from "./components/cards/SmallCard";
-import TopBar from "./components/ui/layout/TopBar";
-import SearchBar from "./components/ui/input/SearchBar";
-import CountryCircleCard from "./components/cards/CountryCircleCard";
-import PlanToTravelCard from "./components/cards/PlanToTravelCard";
-import BigCard from "./components/cards/bigCard/BigCard";
-import categoryIcon from "/src/assets/icons/kategori/category-icon.svg";
-import SortExploreCard from "./components/cards/SortExploreCard";
-import addedRecently from "/src/assets/icons/Sortér efter/addedRecently-icon.svg";
-import fewViews from "/src/assets/icons/Sortér efter/fewViews-icon.svg";
-import nearYou from "/src/assets/icons/Sortér efter/nearYou-icon.svg";
-import popular from "/src/assets/icons/Sortér efter/popular-icon.svg";
-import image from "/src/assets/images/countries/Frankrig/france-main-image.png";
-import pinIcon from "/src/assets/icons/navbar/pin-icon.svg";
-import SavedCard from "./components/cards/savedCard/SavedCard";
+import './App.css'
+import BottomNavigationBar from './components/ui/layout/bottom-navigation-bar/BottomNavigationBar.tsx';
 
 function App() {
   return (
@@ -103,6 +89,7 @@ function App() {
 
       <SavedCard title="Italien" />
       <SavedCard title="Frankrig" />
+      <BottomNavigationBar/>
     </>
   );
 }
