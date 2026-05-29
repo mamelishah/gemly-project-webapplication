@@ -1,10 +1,11 @@
 import './App.css'
+import BottomNavigationBar from './components/ui/layout/bottom-navigation-bar/BottomNavigationBar.tsx';
 
 function App() {
 
   return (
     <>
-      <div> Hello world </div>
+      <BottomNavigationBar/>
     </>
   )
 }
