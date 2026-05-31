@@ -26,6 +26,7 @@ import Cuscoimage from "/src/assets/images/plantotravel/cusco-plan-to-travel.png
 import Bukarestimage from "/src/assets/images/plantotravel/bukarest-plan-to-travel.png";
 import Colonimage from "/src/assets/images/plantotravel/colon-plan-to-travel.png";
 import Aucklandimage from "/src/assets/images/plantotravel/auckland-plan-to-travel.png";
+import ExploreNearYou from '../components/cards/ExploreNearYou';
 
 function Explore() {
   return (
@@ -39,6 +40,9 @@ function Explore() {
         showCancelIcon={true}
         placeholderText={"Søg efter steder..."}
       />
+      <div className="explore-near-you-container">
+        <ExploreNearYou />
+      </div>
       <h1>Vist for nyligt</h1>
       <div id="small-card-container">
         <SmallCard
