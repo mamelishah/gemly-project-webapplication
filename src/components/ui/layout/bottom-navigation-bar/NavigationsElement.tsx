@@ -1,12 +1,13 @@
 import './NavigationsElement.css'
+import { NavLink } from 'react-router-dom';
 
-function NavigationsElement({ label, iconUrl }: { label: string; iconUrl: string }) {
+function NavigationsElement({ label, iconUrl, to }: { label: string; iconUrl: string; to: string }) {
   return (
     <div className="navigations-element">
-      <button className="nav-button">
+      <NavLink to={to} className="nav-button">
         <img src={iconUrl} alt={label} className="nav-icon" />
         <span className="nav-label">{label}</span>
-      </button>
+      </NavLink>
     </div>
   );
 }
