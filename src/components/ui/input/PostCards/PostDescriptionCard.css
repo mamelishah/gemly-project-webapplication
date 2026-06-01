@@ -1,0 +1,39 @@
+.post-description-wrapper {
+  width: 100%;
+  margin: 12px 0;
+}
+
+.post-description-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.post-description-header label {
+  font-family: var(--main-font-family);
+  font-size: var(--h4-font-size);
+  color: #666;
+}
+
+.character-count {
+  font-size: 14px;
+  color: #999;
+}
+
+.post-description-card {
+  width: 100%;
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px;
+  box-sizing: border-box;
+  min-height: 120px;
+  font-family: var(--main-font-family);
+  font-size: var(--h4-font-size);
+  resize: none;
+}
+
+.post-description-card::placeholder {
+  color: #999;
+}
