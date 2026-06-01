@@ -19,7 +19,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0px
+  padding: var(--radius-xl) 20px
 }
 
 
@@ -88,4 +88,34 @@ a {
 #swipe-info {
   font-weight: lighter;
   font-size: 14px;
+}
+
+.preboarding-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+
+.slide-title {
+  font-size: 32px;
+  color: var(--regular-text);
+  text-align: left;
+  font-weight: normal;
+}
+
+.slide-infobox {
+  font-size: 22px;
+  color: var(--passive-text-grey);
+  text-align: left;
+  font-weight: lighter;
 }
