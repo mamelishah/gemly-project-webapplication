@@ -3,7 +3,7 @@ import "./SearchBar.css";
 import cancelIcon from "/src/assets/icons/navigation/cancelBig-icon.svg";
 import searchIcon from "/src/assets/icons/navbar/search-icon.svg";
 
-function SearchBar({ showCancelIcon, placeholderText }) {
+function SearchBar({ showCancelIcon, placeholderText }: { showCancelIcon: boolean; placeholderText: string }) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleClear = ({}) => {

@@ -1,22 +1,16 @@
 import "./onboarding.css";
 import { useState, useRef } from "react";
 import SlideCreateUser from "./SlideCreateUser";
+import SlideCreatePassword from "./CreatePassword";
+import TopBar from "../../components/ui/layout/TopBar";
+import AddProfilImage from "./AddProfilImage";
+import ChooseCountry from "./ChooseCountry";
 
 interface PaginationDotsProps {
   total: number;
   active: number;
   onChange: (index: number) => void;
 }
-const pages = [
-  <div className="onboarding-page">
-    <h1 id="onboarding-title">Velkommen til </h1>
-    <h2 id="onboarding-subtitle">Gemly</h2>
-    <h3 id="onboarding-subsubitle">Nu er du klar til at lave din egen profil</h3>
-  </div>,
-  <SlideCreateUser />,
-  <div className="onboarding-page"></div>,
-  <div className="onboarding-page"></div>,
-];
 
 function PaginationDots({ total, active, onChange }: PaginationDotsProps) {
   return (
@@ -45,7 +39,19 @@ function Onboarding() {
   const [activePage, setActivePage] = useState(0);
   const touchStartX = useRef<number>(0);
 
-   const handleTouchStart = (e: React.TouchEvent) => {
+  const pages = [
+    <div className="onboarding-page">
+      <h1 id="onboarding-title">Velkommen til </h1>
+      <h2 id="onboarding-subtitle">Gemly</h2>
+      <h3 id="onboarding-subsubitle">Nu er du klar til at lave din egen profil</h3>
+    </div>,
+    <SlideCreateUser isActive={activePage === 1}/>,
+    <SlideCreatePassword isActive={activePage === 2} />,
+    <AddProfilImage />,
+    <ChooseCountry />,
+  ];
+
+  const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
 
@@ -53,7 +59,7 @@ function Onboarding() {
     const diff = touchStartX.current - e.changedTouches[0].clientX;
 
     if (diff > 50) {
-      setActivePage((prev) => Math.min(prev + 1, 3));
+      setActivePage((prev) => Math.min(prev + 1, pages.length - 1));
     } else if (diff < -50) {
       setActivePage((prev) => Math.max(prev - 1, 0));
     }
@@ -61,19 +67,38 @@ function Onboarding() {
 
   return (
     <section id="onboarding" className="onboarding" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-      <div className="onboarding-content">
-        {pages[activePage]}
-      </div>
-      <div id="interative-content">
-        <PaginationDots total={4} active={activePage} onChange={setActivePage} />
-        <p id="swipe-info">SWIPE FOR MERE INFO</p>
-        <button id="next-button" onClick={() => setActivePage((prev) => (prev + 1) % 4)}>
-          Videre
-        </button>
-        <p id="already-user">Allerede bruger? <span><a href="/login">Login</a></span></p>
+      <div className="onboarding-element" id="onboarding-elements">
+        <div className="onboarding-content">
+          {pages.map((page, index) => (
+            <div
+              key={index}
+              style={{ 
+                display: index === activePage ? "block" : "none", 
+                height: "100%" 
+              }}
+            >
+              {page}
+            </div>
+          ))}
+        </div>
+        
+        <div id="interative-content">
+          <PaginationDots total={pages.length} active={activePage} onChange={setActivePage} />
+          
+          {activePage === 0 && (
+            <p id="swipe-info">SWIPE FOR MERE INFO</p>
+          )}
+          
+          <button id="next-button" onClick={() => setActivePage((prev) => (prev + 1) % pages.length)}>
+            {activePage === 3 ? "Vælg et billede" : activePage === 4 ? "Afslut" : "Videre"}
+          </button>
+          
+          {activePage === 0 && <p id="already-user">Allerede bruger? <span><a href="/login">Login</a></span></p>}
+          {activePage === 3 && <button id="skip-button">Spring over</button>}
+        </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Onboarding
+export default Onboarding;
