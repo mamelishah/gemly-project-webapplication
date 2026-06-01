@@ -1,21 +1,40 @@
-import {useState} from "react";
+import {useState, useEffect, useRef} from "react";
 import "./onboarding.css";
 import "./slideCreateUser.css";
 
-function SlideCreateUser() {
+
+interface SlideProps {
+  isActive: boolean;
+}
+
+
+function SlideCreateUser({isActive}: SlideProps) {
   const [username, setUsername] = useState("");
+
+   const inputRef = useRef<HTMLInputElement>(null);
+
+     useEffect(() => {
+    if (isActive && inputRef.current) {
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 50); 
+    }
+  }, [isActive]);
 
   return (
     <div className="onboarding-page">
-        <h1 className="slide-title">Opret bruger</h1>
         <div className="main-content">
-        <div className="text-container">
-          <h2 className="slide-subtitle">Hvad skal vi kalde dig?</h2>
+          
+        <div className="text-container-onboarding">
+          <h1 className="slide-title">Hvad skal vi kalde dig?</h1>
+          <h2 className="slide-subtitle"></h2>
           <p className="slide-infobox">Lav et brugernavn ud fra dit navn. Du kan ændre det når som helst.</p>
         </div>
 
         <div className="input-container">
           <input
+                      ref={inputRef} 
+
             type="text"
             maxLength={20}
             placeholder="Vælg et brugernavn"

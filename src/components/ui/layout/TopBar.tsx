@@ -2,12 +2,12 @@ import "./TopBar.css";
 import arrowLeftIcon from "/src/assets/icons/navigation/arrowLeftBig-icon.svg";
 import cancelIcon from "/src/assets/icons/navigation/cancelBig-icon.svg";
 
-function TopBar({ title, showLeftIcon, showRightIcon }) {
+function TopBar({ title, showLeftIcon, showRightIcon }: { title: string; showLeftIcon: boolean; showRightIcon: boolean }) {
   return (
     <section id="top-bar">
       {showLeftIcon ? (
-        <button id="top-bar-back-button">
-          <img src={arrowLeftIcon} alt="Arrow Left" />
+        <button id="top-bar-back-button" >
+          <img src={arrowLeftIcon} alt="Arrow Left2" />
         </button>
       ) : null}
       <h1>{title}</h1>
