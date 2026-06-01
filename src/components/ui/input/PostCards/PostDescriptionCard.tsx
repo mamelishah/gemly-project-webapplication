@@ -2,8 +2,12 @@ import "./PostDescriptionCard.css";
 
 function PostDescriptionCard({ description }) {
   return (
-    <div className="post-description-card">
-      <h4>{description}</h4>
+    <div>
+      <input
+        className="post-title-card"
+        type={description}
+        placeholder="Giv stedet en beskrivelse"
+      />
     </div>
   );
 }

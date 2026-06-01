@@ -1,0 +1,41 @@
+.post-category-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  margin: 12px 0;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.post-category-card .category-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.post-category-card .category-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.post-category-card h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.post-category-card .arrow-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.post-category-card:hover {
+  background-color: #efefef;
+}

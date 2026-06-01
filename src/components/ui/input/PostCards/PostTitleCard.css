@@ -1,12 +1,16 @@
 .post-title-card {
+  width: 100%;
   background-color: #f9f9f9;
   border: 1px solid #eee;
   border-radius: 8px;
   padding: 12px;
   margin: 12px 0;
+  box-sizing: border-box;
+  font: inherit;
 }
 
-.post-title-card h2 {
-  font-size: 18px;
-  margin: 0;
+.post-title-card::placeholder {
+  font-family: var(--main-font-family);
+  font-size: var(--h4-font-size);
+  color: #999;
 }

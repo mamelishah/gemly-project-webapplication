@@ -1,13 +1,18 @@
 .post-description-card {
+  width: 100%;
   background-color: #f9f9f9;
   border: 1px solid #eee;
   border-radius: 8px;
   padding: 12px;
-  padding-bottom: 48px;
   margin: 12px 0;
+  box-sizing: border-box;
+  font: inherit;
+  min-height: 80px;
+  vertical-align: top;
 }
 
-.post-description-card p {
-  font-size: 16px;
-  margin: 0;
+.post-description-card::placeholder {
+  font-family: var(--main-font-family);
+  font-size: var(--h4-font-size);
+  color: #999;
 }

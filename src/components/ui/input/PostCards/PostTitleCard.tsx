@@ -2,8 +2,12 @@ import "./PostTitleCard.css"
 
 function PostTitleCard({ title }) {
   return (
-    <div className="post-title-card">
-      <h4>{title}</h4>
+    <div>
+      <input
+        className="post-title-card"
+        type={title}
+        placeholder="Skriv en passende titel"
+      />
     </div>
   );
 }
