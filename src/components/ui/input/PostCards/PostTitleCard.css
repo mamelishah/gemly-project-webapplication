@@ -1,16 +1,38 @@
+.post-title-wrapper {
+  width: 100%;
+  margin: 12px 0;
+}
+
+.post-title-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.post-title-header label {
+  font-family: var(--main-font-family);
+  font-size: var(--h4-font-size);
+  color: #666;
+}
+
+.character-count {
+  font-size: 14px;
+  color: #999;
+}
+
 .post-title-card {
   width: 100%;
   background-color: #f9f9f9;
   border: 1px solid #eee;
   border-radius: 8px;
   padding: 12px;
-  margin: 12px 0;
   box-sizing: border-box;
-  font: inherit;
+  font-family: var(--main-font-family);
+  font-size: var(--h4-font-size);
+  color: #333;
 }
 
 .post-title-card::placeholder {
-  font-family: var(--main-font-family);
-  font-size: var(--h4-font-size);
-  color: #999;
+  color: transparent;
 }
