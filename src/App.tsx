@@ -9,7 +9,7 @@ import Filter from './pages/Filter';
 import Search from './pages/Search';
 import Saved from './pages/Saved';
 import Post from './pages/Post';
-import Onboarding from './pages/Onboarding';
+import Onboarding from './pages/onboarding/Onboarding';
 import Preboarding from './pages/Preboarding';
 import Account from './pages/Account';
 

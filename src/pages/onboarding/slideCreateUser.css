@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+.onboarding-page {
+  margin-top: 40;
+}
+
+
+.main-content {
+  width: 90%;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-direction: column;
+  align-items: start;
+}
+
+
+
+.slide-infobox {
+  font-size: 16px !important;
+}
+
+.slide-subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: var(--passive-text-grey);
+  font-style: normal;
+  font-weight: bold;
+}
+
+.slide-title {
+  text-align: center;
+  font-size: 24px;
+  color: var(--regular-text);
+  font-style: normal;
+  font-weight: lighter;
+}
+
+.input-container {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.input-container {
+  width: 100%;
+  position: relative;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background-color: var(--stroke-light-grey);
+  border-radius: var(--radius-s);
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+
+.input-container input:focus {
+  border: none;
+  outline: none;
+}
+
+
+.input-container input::placeholder {
+  color: var(--passive-text-grey);
+  font-weight: lighter;
+}
+
+.input-container .char-count {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: var(--passive-text-grey);
+}
