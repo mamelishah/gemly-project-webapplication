@@ -1,4 +1,4 @@
-import "/PostTitleCard.css"
+import "./PostTitleCard.css"
 
 function PostTitleCard({ title }) {
   return (
