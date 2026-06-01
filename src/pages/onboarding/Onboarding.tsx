@@ -5,6 +5,7 @@ import SlideCreatePassword from "./CreatePassword";
 import TopBar from "../../components/ui/layout/TopBar";
 import AddProfilImage from "./AddProfilImage";
 import ChooseCountry from "./ChooseCountry";
+import ChooseTravelDes from "./ChooseTravelDes";
 
 interface PaginationDotsProps {
   total: number;
@@ -49,6 +50,7 @@ function Onboarding() {
     <SlideCreatePassword isActive={activePage === 2} />,
     <AddProfilImage />,
     <ChooseCountry />,
+    <ChooseTravelDes />
   ];
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -82,7 +84,7 @@ function Onboarding() {
           ))}
         </div>
         
-        <div id="interative-content">
+        <div id="interative-content-onboarding">
           <PaginationDots total={pages.length} active={activePage} onChange={setActivePage} />
           
           {activePage === 0 && (
@@ -90,7 +92,7 @@ function Onboarding() {
           )}
           
           <button id="next-button" onClick={() => setActivePage((prev) => (prev + 1) % pages.length)}>
-            {activePage === 3 ? "Vælg et billede" : activePage === 4 ? "Afslut" : "Videre"}
+            {activePage === 3 ? "Vælg et billede" : activePage === 5 ? "Afslut" : "Videre"}
           </button>
           
           {activePage === 0 && <p id="already-user">Allerede bruger? <span><a href="/login">Login</a></span></p>}
