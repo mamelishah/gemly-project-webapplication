@@ -1,0 +1,17 @@
+.account-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+#edit-profile-button {
+    width: 100%;
+    cursor: pointer;
+    background-color: none;
+    border: 1px solid var(--stroke-dark-grey);
+    border-radius: var(--xxl, 40px);
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}

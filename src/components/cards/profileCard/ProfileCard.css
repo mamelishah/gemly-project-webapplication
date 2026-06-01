@@ -1,0 +1,9 @@
+.profile-card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: var(--radius-s);
+  padding-bottom: var(--radius-m);
+  border-bottom: 1px solid var(--stroke-light-grey, #e7e7e7);
+}
