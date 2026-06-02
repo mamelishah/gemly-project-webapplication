@@ -35,6 +35,9 @@ function Explore() {
         title="Opdag noget nyt"
         showLeftIcon={false}
         showRightIcon={false}
+        onLeftIconClick={""}
+        onRightIconClick = {""}
+
       />
       <SearchBar
         showCancelIcon={true}
