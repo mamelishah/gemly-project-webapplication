@@ -5,10 +5,14 @@
 }
 
 
+#onboarding.first-slide-bg {
+  background: #ffffff;
+  background: linear-gradient(355deg, rgba(255, 255, 255, 1) 0%, rgba(111, 156, 70, 0.6) 100%);
+}
+
 
 #onboarding {
-  background: #ffffff;
-  background: var(--background_white);
+  background: var(--background-white);
   padding: 0;
   margin: 0;
   width: 100vw;
@@ -47,7 +51,7 @@
   flex-direction: column;
   justify-content: center;
   margin-top: 60px;
-  gap: 10px;
+  gap: 16px;
   padding: 0 20px
 }
 
@@ -86,6 +90,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   justify-content: center;
 }

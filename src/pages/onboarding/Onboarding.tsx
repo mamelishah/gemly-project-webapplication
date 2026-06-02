@@ -41,7 +41,7 @@ function Onboarding() {
   const touchStartX = useRef<number>(0);
 
   const pages = [
-    <div className="onboarding-page">
+    <div className="onboarding-page" >
       <h1 id="onboarding-title">Velkommen til </h1>
       <h2 id="onboarding-subtitle">Gemly</h2>
       <h3 id="onboarding-subsubitle">Nu er du klar til at lave din egen profil</h3>
@@ -68,7 +68,7 @@ function Onboarding() {
   };
 
   return (
-    <section id="onboarding" className="onboarding" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+    <section id="onboarding" className={`onboarding ${activePage === 0 ? "first-slide-bg" : ""}`} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       <div className="onboarding-element" id="onboarding-elements">
         <div className="onboarding-content">
           {pages.map((page, index) => (
