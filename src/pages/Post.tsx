@@ -1,21 +1,20 @@
-import React from "react";
-import BottomNavigationBar from "../components/ui/layout/bottom-navigation-bar/BottomNavigationBar";
 import PostTitleCard from "../components/ui/input/PostCards/PostTitleCard";
 import PostDescriptionCard from "../components/ui/input/PostCards/PostDescriptionCard";
 import PostPictureCard from "../components/ui/input/PostCards/PostPictureCard";
-import Brasilien from "../assets/images/countries/Brasilien/Brazil-main-image.png";
 import PlusBigIcon from "../assets/icons/navigation/plusBig-icon.svg";
 import PostCategoryCard from "../components/ui/input/PostCards/PostCategoryCard";
 import CategoryIcon from "../assets/icons/kategori/category-icon.svg";
 import ArrowRightIcon from "../assets/icons/navigation/arrowRightBig-icon.svg";
 import MapLocation from "../assets/icons/card funktioner/mapLocation-icon.svg";
+import TopBar from "../components/ui/layout/TopBar";
+import PostButtonCard from "../components/ui/input/PostCards/PostButtonCard";
+import "./Post.css";
 
 function Post() {
   return (
     <div className="post-container">
-      <div>Map</div>
-      <h1>Dette er en test for post-siden</h1>
-      <PostPictureCard image={Brasilien} icon={PlusBigIcon} />
+      <TopBar title="Tilføj opslag" showLeftIcon={true} showRightIcon={false} />
+      <PostPictureCard icon={PlusBigIcon} />
       <PostTitleCard title="Skriv en passende titel" />
       <PostDescriptionCard description="Skriv en passende beskrivelse" />
       <PostCategoryCard
@@ -28,7 +27,10 @@ function Post() {
         title="Tilføj lokation"
         icon={ArrowRightIcon}
       />
-      <BottomNavigationBar />
+      <div className="button-container">
+        <PostButtonCard />
+        <PostButtonCard />
+      </div>
     </div>
   );
 }

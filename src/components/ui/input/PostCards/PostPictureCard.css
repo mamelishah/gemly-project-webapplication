@@ -1,27 +1,35 @@
 .post-picture-card {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
-  padding: 16px;
+  width: 100%;
+  margin: 25px 0px;
 }
-
-.post-picture-card img {
+/* .post-picture-card img {
   width: 150px;
   height: 150px;
   border-radius: 16px;
   object-fit: cover;
-}
+} */
 
 .post-picture-card .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: fit-content;
+  height: fit-content;
+  padding: 15px 20px;
+  gap: 5px;
   border: 1px solid #d0d0d0;
   border-radius: 8px;
   background-color: #ffffff;
   cursor: pointer;
+}
+
+.post-picture-card .icon h6 {
+  color: #333333;
+  margin: 0;
 }
 
 .post-picture-card .icon-image {
