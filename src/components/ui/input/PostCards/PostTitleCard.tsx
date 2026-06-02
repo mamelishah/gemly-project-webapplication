@@ -1,8 +1,12 @@
 import "./PostTitleCard.css";
-import { useState } from "react";
 
-function PostTitleCard({ title }) {
-  const [text, setText] = useState("");
+type PostTitleCardProps = {
+  title: string;
+  text: string;
+  setText: React.Dispatch<React.SetStateAction<string>>;
+};
+
+function PostTitleCard({ title, text, setText }: PostTitleCardProps) {
   const maxLength = 25;
 
   return (
@@ -13,10 +17,10 @@ function PostTitleCard({ title }) {
           {text.length}/{maxLength}
         </span>
       </div>
+
       <input
         className="post-title-card"
         type="text"
-        placeholder=""
         value={text}
         onChange={(e) => setText(e.target.value.slice(0, maxLength))}
         maxLength={maxLength}

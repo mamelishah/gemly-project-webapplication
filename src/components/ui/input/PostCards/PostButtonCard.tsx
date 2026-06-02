@@ -1,9 +1,21 @@
 import "./PostButtonCard.css";
 
-function PostButtonCard() {
+function PostButtonCard({
+  title,
+  classNameButton,
+  onClickMethod,
+}: {
+  title: string;
+  classNameButton?: string;
+  onClickMethod?: () => void;
+}) {
   return (
-    <button className="post-button" onClick={() => alert("Post submitted!")}>
-      Slå op
+    <button
+      className={`post-button ${classNameButton}`}
+      onClick={onClickMethod}
+      type="button"
+    >
+      {title}
     </button>
   );
 }
