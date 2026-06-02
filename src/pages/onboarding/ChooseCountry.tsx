@@ -4,7 +4,6 @@ import "./CreatePassword.css";
 import "./chooseCountry.css";
 import searchIcon from "/src/assets/icons/navbar/search-icon.svg";
 
-// 1. Lav en liste med alle landene og deres flag-koder
 const COUNTRIES_DATA = [
   { name: "Belgien", code: "be" },
   { name: "Danmark", code: "dk" },
@@ -26,7 +25,6 @@ const COUNTRIES_DATA = [
 function ChooseCountry() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  // 2. Filtrer listen live baseret på hvad der skrives i input-feltet
   const filteredCountries = COUNTRIES_DATA.filter((country) =>
     country.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -53,7 +51,6 @@ function ChooseCountry() {
           </div> 
 
           <div className="country-list">
-            {/* 3. Hvis der er match, så loop igennem de filtrerede lande */}
             {filteredCountries.length > 0 ? (
               filteredCountries.map((country) => (
                 <div className="country-item" key={country.code}>
@@ -62,7 +59,6 @@ function ChooseCountry() {
                 </div>
               ))
             ) : (
-              /* Hvis brugeren søger efter noget sludder, der ikke findes på listen: */
               <p style={{ padding: "10px 0", color: "#888", fontStyle: "italic" }}>
                 Ingen lande fundet...
               </p>

@@ -19,13 +19,12 @@ function Post() {
   const [descriptionText, setDescriptionText] = useState("");
   const navigate = useNavigate();
 
-  async function handleSubmit() {
+  async function handlePost() {
     await fetch(`${URL}/post_users`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         apikey: import.meta.env.VITE_SUPABASE_APIKEY,
-        // Authorization: `${import.meta.env.VITE_SUPABASE_APIKEY}`,
       },
       body: JSON.stringify({
         title: titleText.trim(),
@@ -69,7 +68,7 @@ function Post() {
         <PostButtonCard
           title="Slå op"
           classNameButton="post-button-post"
-          onClickMethod={handleSubmit}
+          onClickMethod={handlePost}
         />
       </div>
     </div>
