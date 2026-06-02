@@ -5,3 +5,10 @@
   overflow-x: hidden;
   box-sizing: border-box;
 }
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+}
