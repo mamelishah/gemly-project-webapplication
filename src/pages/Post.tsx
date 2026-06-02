@@ -38,7 +38,7 @@ function Post() {
 
   return (
     <div className="post-container">
-      <TopBar title="Tilføj opslag" showLeftIcon={true} showRightIcon={false} />
+      <TopBar title="Tilføj opslag" showLeftIcon={true} showRightIcon={false} onLeftIconClick={() => {}} onRightIconClick={() => {}} />
       <PostPictureCard icon={PlusBigIcon} />
       <PostTitleCard
         title="Skriv en passende titel"
