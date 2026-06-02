@@ -10,7 +10,7 @@ function Map() {
     <div >
       <div>Map</div>
       <div>
-        <SearchBar />
+        <SearchBar showCancelIcon={true} placeholderText={"Søg efter steder..."}/>
       </div>
       <div className="category-button-container">
         <CategoryButton icon={FilterIcon} title="Filter" />
