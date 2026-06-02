@@ -27,4 +27,5 @@
   border-radius: var(--XXXL, 40px);
   border: 0.125rem solid var(--Stroke-Light-Grey, #e7e7e7);
   width: 100%;
+  align-items: center;
 }

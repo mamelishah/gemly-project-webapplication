@@ -37,80 +37,82 @@ function Explore() {
         showRightIcon={false}
       />
       <SearchBar
-        showCancelIcon={true}
+        showCancelIcon={false}
         placeholderText={"Søg efter steder..."}
       />
-      <div className="explore-near-you-container">
-        <ExploreNearYou />
-      </div>
-      <h1>Vist for nyligt</h1>
-      <div id="small-card-container">
-        <SmallCard
-          title={"Ridetur"}
-          image={Rideturimage}
-          pinIcon={pinIcon}
-          location={"Tupiza, Bolivia"}
-        />
-        <SmallCard
-          title={"Fiskershop"}
-          image={Fiskerspotimage}
-          pinIcon={pinIcon}
-          location={"Rurrenabaque, Bolivia"}
-        />
-        <SmallCard
-          title={"Lokal Marked"}
-          image={Lokalmarkedimage}
-          pinIcon={pinIcon}
-          location={"Sucre, Bolivia"}
-        />
-        <SmallCard
-          title={"Lokal Shop"}
-          image={Lokalshopimage}
-          pinIcon={pinIcon}
-          location={"Marrakech, Marokko"}
-        />
-      </div>
-      <h1>Opdag noget nyt</h1>
-      <h4>Udforsk skjulte steder i hele verden</h4>
-      <div id="country-circle-card-container">
-        <CountryCircleCard image={Frankrigimage} countryName="Frankrig" />
-        <CountryCircleCard image={Sverigeimage} countryName="Sverige" />
-        <CountryCircleCard image={indiaimage} countryName="Indien" />
-        <CountryCircleCard image={Brazilimage} countryName="Brasilien" />
-        <CountryCircleCard image={Southafricaimage} countryName="Sydafrika" />
-        <CountryCircleCard image={Mauritiusimage} countryName="Mauritius" />
-        <CountryCircleCard image={Polandimage} countryName="Polen" />
-      </div>
-      <h1>Sortér efter</h1>
-      <div id="sort-container">
-        <SortExploreCard icon={addedRecently} text="Tilføjet for nylig" />
-        <SortExploreCard icon={fewViews} text="Få visninger" />
-        <SortExploreCard icon={nearYou} text="Nær dig" />
-        <SortExploreCard icon={popular} text="Populære steder" />
-      </div>
-      <h1>Planlæg din næste rejse</h1>
-      <div id="plan-to-travel-container">
-        <PlanToTravelCard
-          image={Cuscoimage}
-          title={"Cusco"}
-          description={"Peru"}
-        />
-        <PlanToTravelCard
-          image={Aucklandimage}
-          title={"Auckland"}
-          description={"New Zealand"}
-        />
-        <PlanToTravelCard
-          image={Colonimage}
-          title={"Colón"}
-          description={"Panama"}
-        />
-        <PlanToTravelCard
-          image={Bukarestimage}
-          title={"Bukarest"}
-          description={"Rumænien"}
-        />
-      </div>
+      <section className="explore-container">
+        <div className="explore-near-you-container">
+          <ExploreNearYou />
+        </div>
+        <h1>Vist for nyligt</h1>
+        <div id="small-card-container">
+          <SmallCard
+            title={"Ridetur"}
+            image={Rideturimage}
+            pinIcon={pinIcon}
+            location={"Tupiza, Bolivia"}
+          />
+          <SmallCard
+            title={"Fiskershop"}
+            image={Fiskerspotimage}
+            pinIcon={pinIcon}
+            location={"Rurrenabaque, Bolivia"}
+          />
+          <SmallCard
+            title={"Lokal Marked"}
+            image={Lokalmarkedimage}
+            pinIcon={pinIcon}
+            location={"Sucre, Bolivia"}
+          />
+          <SmallCard
+            title={"Lokal Shop"}
+            image={Lokalshopimage}
+            pinIcon={pinIcon}
+            location={"Marrakech, Marokko"}
+          />
+        </div>
+        <h1>Hvor skal du hen?</h1>
+        <h4>Udforsk skjulte steder i hele verden</h4>
+        <div id="country-circle-card-container">
+          <CountryCircleCard image={Frankrigimage} countryName="Frankrig" />
+          <CountryCircleCard image={Sverigeimage} countryName="Sverige" />
+          <CountryCircleCard image={indiaimage} countryName="Indien" />
+          <CountryCircleCard image={Brazilimage} countryName="Brasilien" />
+          <CountryCircleCard image={Southafricaimage} countryName="Sydafrika" />
+          <CountryCircleCard image={Mauritiusimage} countryName="Mauritius" />
+          <CountryCircleCard image={Polandimage} countryName="Polen" />
+        </div>
+        <h1>Sortér efter</h1>
+        <div id="sort-container">
+          <SortExploreCard icon={addedRecently} text="Tilføjet for nylig" />
+          <SortExploreCard icon={fewViews} text="Få visninger" />
+          <SortExploreCard icon={nearYou} text="Nær dig" />
+          <SortExploreCard icon={popular} text="Populære steder" />
+        </div>
+        <h1>Planlæg din næste rejse</h1>
+        <div id="plan-to-travel-container">
+          <PlanToTravelCard
+            image={Cuscoimage}
+            title={"Cusco"}
+            description={"Peru"}
+          />
+          <PlanToTravelCard
+            image={Aucklandimage}
+            title={"Auckland"}
+            description={"New Zealand"}
+          />
+          <PlanToTravelCard
+            image={Colonimage}
+            title={"Colón"}
+            description={"Panama"}
+          />
+          <PlanToTravelCard
+            image={Bukarestimage}
+            title={"Bukarest"}
+            description={"Rumænien"}
+          />
+        </div>
+      </section>
       <BottomNavigationBar />
     </>
   );

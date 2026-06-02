@@ -14,7 +14,7 @@
 }
 
 #small-card-content {
-  padding: 0rem;
+  padding: 0rem 0.5rem 0.5rem;
 }
 
 #small-card-title {
@@ -28,25 +28,11 @@
   align-items: center;
 }
 
-#small-card h2 {
-  font-size: 1rem;
-  margin: 0;
-  font-weight: 600;
-  padding: 0.5rem 0.5rem;
-}
-
 #small-card-location {
   display: flex;
   align-items: center;
   font-family: var(--main-family-font);
   font-size: medium;
-  padding: 0.5rem;
-}
-
-#small-card h5 {
-  color: #666;
-  font-size: 1em;
-  margin: 0;
 }
 
 #small-card button {
