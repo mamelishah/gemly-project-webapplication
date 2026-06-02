@@ -6,11 +6,11 @@ import searchIcon from "/src/assets/icons/navbar/search-icon.svg";
 function SearchBar({ showCancelIcon, placeholderText }) {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleClear = ({}) => {
+  const handleClear = () => {
     setSearchQuery("");
   };
 
-  const handleSearch = (e: any) => {
+  const handleSearch = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     console.log("Searching for:", searchQuery);
   };
