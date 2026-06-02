@@ -1,0 +1,22 @@
+.category-button {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #d0d0d0;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.category-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.category-button h5 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+}
