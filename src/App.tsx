@@ -17,7 +17,7 @@ import Account from './pages/Account';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Explore />} />
+      <Route path="/" element={<Preboarding />} />
       <Route path="/map" element={<Map />} />
       <Route path="/account" element={<Account />} />
       <Route path="/account-posted" element={<AccountPosted />} />
