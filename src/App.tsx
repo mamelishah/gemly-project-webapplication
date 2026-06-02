@@ -9,17 +9,12 @@ import Filter from './pages/Filter';
 import Search from './pages/Search';
 import Saved from './pages/Saved';
 import Post from './pages/Post';
-import Onboarding from './pages/onboarding/Onboarding';
+import Onboarding from './pages/Onboarding';
 import Preboarding from './pages/Preboarding';
 import Account from './pages/Account';
 
 
 function App() {
-  const URL = import.meta.env.VITE_SUPABASE_URL;
-const APIKEY = import.meta.env.VITE_SUPABASE_APIKEY;
-
-console.log(URL);
-console.log(APIKEY)
   return (
     <Routes>
       <Route path="/" element={<Explore />} />
