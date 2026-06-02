@@ -6,7 +6,7 @@ function SmallCard({ image, title, pinIcon, location } : { image: string; title:
     <section id="small-card">
       <img
         src={image}
-        alt="Small Card"
+        alt="Image"
       />
       <div id="small-card-content">
         <div id="small-card-title-row">
