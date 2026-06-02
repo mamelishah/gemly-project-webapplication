@@ -1,6 +1,6 @@
 import "./PostPictureCard.css";
 
-function PostPictureCard({ icon }) {
+function PostPictureCard({ icon } : {icon: string}) {
   return (
     <div className="post-picture-card">
       {/* <img src={image} alt="Post" /> */}

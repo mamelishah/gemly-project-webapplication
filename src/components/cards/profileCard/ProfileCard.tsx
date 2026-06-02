@@ -1,7 +1,12 @@
 import "./ProfileCard.css"
-import backIcon from "/src/assets/icons/navigation/arrowRightSmall-icon.svg"
+import backIcon from "../../../assets/icons/navigation/arrowLeftSmall-icon.svg"
 
-export default function ProfileCard({ title, showBackIcon }) {
+type ProfileCardProps = {
+    title: string
+    showBackIcon?: boolean
+}
+
+export default function ProfileCard({ title, showBackIcon }: ProfileCardProps) {
     return (
         <section className="profile-card">
                 <h4>{title}</h4>
