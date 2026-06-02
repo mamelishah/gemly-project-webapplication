@@ -6,6 +6,7 @@ import TopBar from "../../components/ui/layout/TopBar";
 import AddProfilImage from "./AddProfilImage";
 import ChooseCountry from "./ChooseCountry";
 import ChooseTravelDes from "./ChooseTravelDes";
+import { useNavigate } from "react-router";
 
 interface PaginationDotsProps {
   total: number;
@@ -39,6 +40,7 @@ function PaginationDots({ total, active, onChange }: PaginationDotsProps) {
 function Onboarding() {
   const [activePage, setActivePage] = useState(0);
   const touchStartX = useRef<number>(0);
+  const navigate = useNavigate();
 
   const pages = [
     <div className="onboarding-page" >
@@ -61,7 +63,11 @@ function Onboarding() {
     const diff = touchStartX.current - e.changedTouches[0].clientX;
 
     if (diff > 50) {
-      setActivePage((prev) => Math.min(prev + 1, pages.length - 1));
+      if (activePage === pages.length - 1) {
+        navigate("/explore"); 
+      } else {
+        setActivePage((prev) => prev + 1);
+      }
     } else if (diff < -50) {
       setActivePage((prev) => Math.max(prev - 1, 0));
     }
@@ -90,10 +96,21 @@ function Onboarding() {
           {activePage === 0 && (
             <p id="swipe-info">SWIPE FOR MERE INFO</p>
           )}
-          
-          <button id="next-button" onClick={() => setActivePage((prev) => (prev + 1) % pages.length)}>
-            {activePage === 3 ? "Vælg et billede" : activePage === 5 ? "Afslut" : "Videre"}
-          </button>
+
+          <button 
+  id="next-button" 
+  onTouchStart={(e) => e.stopPropagation()} 
+  onTouchEnd={(e) => e.stopPropagation()}
+  onClick={() => {
+    if (activePage === pages.length - 1) {
+      navigate("/explore"); 
+    } else {
+      setActivePage((prev) => prev + 1);
+    }
+  }}
+>
+  {activePage === 3 ? "Vælg et billede" : activePage === 5 ? "Afslut" : "Videre"}
+</button>
           
           {activePage === 0 && <p id="already-user">Allerede bruger? <span><a href="/login">Login</a></span></p>}
           {activePage === 3 && <button id="skip-button">Spring over</button>}

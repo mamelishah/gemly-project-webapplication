@@ -1,6 +1,6 @@
 import "./Preboarding.css";
 import { useState, useRef } from "react";
-
+import { useNavigate } from "react-router";
 
 interface PaginationDotsProps {
   total: number;
@@ -74,6 +74,7 @@ function PaginationDots({ total, active, onChange }: PaginationDotsProps) {
 function Preboarding() {
   const [activePage, setActivePage] = useState(0);
   const touchStartX = useRef<number>(0);
+  const navigate = useNavigate();
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -83,7 +84,11 @@ function Preboarding() {
     const diff = touchStartX.current - e.changedTouches[0].clientX;
 
     if (diff > 50) {
-      setActivePage((prev) => Math.min(prev + 1, 3));
+      if (activePage === 3) {
+        navigate("/onboarding");
+      } else {
+        setActivePage((prev) => prev + 1);
+      }
     } else if (diff < -50) {
       setActivePage((prev) => Math.max(prev - 1, 0));
     }
@@ -97,9 +102,18 @@ function Preboarding() {
       <div id="interative-content">
         <PaginationDots total={4} active={activePage} onChange={setActivePage} />
         <p id="swipe-info">SWIPE FOR MERE INFO</p>
-        <button id="next-button" onClick={() => setActivePage((prev) => (prev + 1) % 3)}>
-          Videre
-        </button>
+        <button 
+  id="next-button" 
+  onClick={() => {
+    if (activePage === 3) {
+      navigate("/onboarding");
+    } else {
+      setActivePage((prev) => prev + 1);
+    }
+  }}
+>
+  {activePage === 3 ? "Kom i gang" : "Videre"}
+</button>
         <p id="already-user">Allerede bruger? <span><a href="/login">Login</a></span></p>
       </div>
     </section>
