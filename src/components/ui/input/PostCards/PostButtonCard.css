@@ -1,11 +1,12 @@
 .post-button {
   width: 100%;
-  padding: var(--radius-m, 12px) 0;
+  padding: var(--radius-l, 100px);
   border: none;
   border-radius: var(--radius-xxl, 20px);
   background-color: var(--brand-light-green, #6f9c46);
   color: var(--background-white, #fbfbfb);
   cursor: pointer;
+  font-size: 0.85rem;
 }
 
 .post-button-post {

@@ -31,14 +31,13 @@
   left: 0;
   right: 0;
   padding: 1rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
   color: white;
   z-index: 2;
 }
 
 #plan-to-travel-card h1 {
   font-family: var(--main-family-font);
-  margin: 0 0 0.5rem 0;
   font-size: 2em;
   color: var(--background-white);
 }

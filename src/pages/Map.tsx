@@ -8,17 +8,21 @@ import SearchBar from "../components/ui/input/SearchBar";
 function Map() {
   return (
     <div >
-      <div>Map</div>
       <div>
-        <SearchBar showCancelIcon={true} placeholderText={"Søg efter steder..."}/>
+        <SearchBar
+          showCancelIcon={true}
+          placeholderText={"Søg efter steder..."}
+          onclickMethod={() => {}}
+          onBackClickMethod={() => {}}
+        />
       </div>
       <div className="category-button-container">
-        <CategoryButton icon={FilterIcon} title="Filter" />
-        <CategoryButton icon={FilterIcon} title="Caféer og Restauranter" />
-        <CategoryButton icon={FilterIcon} title="Outdoor" />
-        <CategoryButton icon={FilterIcon} title="Shopping" />
-        <CategoryButton icon={FilterIcon} title="Underholdning" />
-        <CategoryButton icon={FilterIcon} title="Kunst" />
+        <CategoryButton icon={FilterIcon} title="Filter" showIcon={true}/>
+        <CategoryButton icon={FilterIcon} title="Caféer og Restauranter" showIcon={true}/>
+        <CategoryButton icon={FilterIcon} title="Outdoor" showIcon={true}/>
+        <CategoryButton icon={FilterIcon} title="Shopping" showIcon={true}/>
+        <CategoryButton icon={FilterIcon} title="Underholdning" showIcon={true}/>
+        <CategoryButton icon={FilterIcon} title="Kunst" showIcon={true}/>
       </div>
       <BottomNavigationBar />
     </div>

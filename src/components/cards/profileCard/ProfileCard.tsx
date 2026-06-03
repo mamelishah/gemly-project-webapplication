@@ -1,5 +1,5 @@
 import "./ProfileCard.css"
-import backIcon from "../../../assets/icons/navigation/arrowLeftSmall-icon.svg"
+import backIcon from "../../../assets/icons/navigation/arrowRightSmall-icon.svg"
 
 type ProfileCardProps = {
     title: string

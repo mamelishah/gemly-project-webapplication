@@ -13,7 +13,7 @@ function Saved() {
         showRightIcon={false}
       />
       <SearchBar 
-        showCancelIcon={true}
+        showCancelIcon={false}
         placeholderText={"Søg efter steder..."}
       />
       <h1>Album</h1>

@@ -2,26 +2,43 @@ import "./TopBar.css";
 import arrowLeftIcon from "/src/assets/icons/navigation/arrowLeftBig-icon.svg";
 import cancelIcon from "/src/assets/icons/navigation/cancelBig-icon.svg";
 
+
+interface TopBarProps {
+  title: string;
+  showLeftIcon?: boolean;
+  showRightIcon?: boolean;
+  onLeftIconClick?: () => void;
+  onRightIconClick?: () => void;
+  leftIcon?: string;
+  rightIcon?: string;
+}
+
 function TopBar({
   title,
-  showLeftIcon,
-  showRightIcon,
+  showLeftIcon = false,
+  showRightIcon = false,
   onLeftIconClick,
   onRightIconClick,
-}) {
+  leftIcon,
+  rightIcon,
+}: TopBarProps) {
+  const hasIcons = showLeftIcon || showRightIcon;
+
   return (
-    <section id="top-bar">
+    <section id="top-bar" className={!hasIcons ? "centered" : ""}>
       {showLeftIcon ? (
         <button id="top-bar-back-button" onClick={onLeftIconClick}>
-          <img src={arrowLeftIcon} alt="Arrow Left" />
+          <img src={leftIcon} alt="Left" />
         </button>
-      ) : null}
+      ) : <div className="top-bar-placeholder" />}
+
       <h1>{title}</h1>
+
       {showRightIcon ? (
         <button id="top-bar-close-button" onClick={onRightIconClick}>
-          <img src={cancelIcon} alt="Close" />
+          <img src={rightIcon} alt="Right" />
         </button>
-      ) : null}
+      ) : <div className="top-bar-placeholder" />}
     </section>
   );
 }

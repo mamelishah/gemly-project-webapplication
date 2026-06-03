@@ -1,16 +1,12 @@
-.map-container {
-  width: 100%;
-  height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
 .button-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 16px;
+  gap: 5px;
+}
+
+.post-elements {
+  padding: 0 20px;
 }
 
 .preview-image {
