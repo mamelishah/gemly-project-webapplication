@@ -1,10 +1,10 @@
 .saved-card{
     width: 100%;
+    height: 80px;
     border-radius: 1rem;
     background-color: var(--Box-Almost-White, #f5f4f2);
-    border: 1px solid var(--Stroke-Light-Grey, #e7e7e7);
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
+    display: flex;
+    align-items: center;
 }
 
 #saved-card-content {

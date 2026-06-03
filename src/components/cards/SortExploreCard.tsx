@@ -1,7 +1,12 @@
 
 import "./SortExploreCard.css";
 
-function SortExploreCard({ icon, text }) {
+interface SortExploreCard {
+  icon: string;
+  text: string;
+}
+
+function SortExploreCard({ icon, text }: SortExploreCard) {
   return (
     <div id="sort-explore-card">
       <img src={icon} alt={text} />

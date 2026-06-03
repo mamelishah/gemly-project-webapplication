@@ -16,7 +16,7 @@ interface PaginationDotsProps {
 
 function PaginationDots({ total, active, onChange }: PaginationDotsProps) {
   return (
-    <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+    <div style={{ display: "flex", gap: "8px", marginBottom: "5px", alignItems: "center" }}>
       {Array.from({ length: total }).map((_, i) => (
         <button
           key={i}
@@ -76,8 +76,7 @@ function Onboarding() {
   return (
     <section id="onboarding" className={`onboarding ${activePage === 0 ? "first-slide-bg" : ""}`} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       <div className="onboarding-element" id="onboarding-elements">
-        <div className="onboarding-content">
-          {pages.map((page, index) => (
+<div className={`onboarding-content ${activePage === 4 ? "scrollable" : ""}`}>          {pages.map((page, index) => (
             <div
               key={index}
               style={{ 

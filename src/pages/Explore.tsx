@@ -20,103 +20,175 @@ import popular from "/src/assets/icons/Sortér efter/popular-icon.svg";
 import PlanToTravelCard from '../components/cards/PlanToTravelCard';
 import Lokalshopimage from "/src/assets/images/recentlyvisited/local-shop-recently-visited.png";
 import Fiskerspotimage from "/src/assets/images/recentlyvisited/fiskerspot-recently-visited.png";
-import Lokalmarkedimage from "/src/assets/images/recentlyvisited/lokal-marked-recently-visited.png";  
+import Lokalmarkedimage from "/src/assets/images/recentlyvisited/lokal-marked-recently-visited.png";
 import Rideturimage from "/src/assets/images/recentlyvisited/ridetur-recently-visited.png";
 import Cuscoimage from "/src/assets/images/plantotravel/cusco-plan-to-travel.png";
 import Bukarestimage from "/src/assets/images/plantotravel/bukarest-plan-to-travel.png";
 import Colonimage from "/src/assets/images/plantotravel/colon-plan-to-travel.png";
 import Aucklandimage from "/src/assets/images/plantotravel/auckland-plan-to-travel.png";
 import ExploreNearYou from '../components/cards/ExploreNearYou';
+import FilterIcon from "../assets/icons/navigation/filter-icon.svg";
+
+import NotificaitonIcon from "/src/assets/icons/navigation/notification-icon.svg";
+import { useState } from "react";
+import CategoryButton from '../components/ui/button/CategoryButton';
+
+const recentSearches = [
+  {
+    icon: "src/assets/icons/kategori/category-icon.svg",
+    alt: "City",
+    title: "Aarhus",
+    subtitle: "Danmarks næststørste by",
+  },
+  {
+    icon: "src/assets/icons/kategori/category-icon.svg",
+    alt: "Tree",
+    title: "Hovedstad Danmark",
+    subtitle: "København",
+  },
+  {
+    icon: "src/assets/icons/kategori/shop-clean-icon.svg",
+    alt: "Shopping bag",
+    title: "Vintage shop i Aarhus",
+    subtitle: "All Time Vintage",
+  },
+  {
+    icon: "src/assets/icons/kategori/category-icon.svg",
+    alt: "City",
+    title: "Odense",
+    subtitle: "H.C. Andersens fødeby",
+  },
+  {
+    icon: "src/assets/icons/kategori/outdoor-clean-icon.svg",
+    alt: "Tree",
+    title: "Følg en hemmelig rute",
+    subtitle: "Mystery Walk i Aarhus",
+  },
+  {
+    icon: "src/assets/icons/kategori/category-icon.svg",
+    alt: "City",
+    title: "Esbjerg",
+    subtitle: "Vigtig havneby og energicentrum",
+  },
+];
+
 
 function Explore() {
+  const [activePage, setActiveState] = useState(0);
+
   return (
     <>
-      <TopBar
-        title="Opdag noget nyt"
-        showLeftIcon={false}
-        showRightIcon={false}
-        onLeftIconClick={""}
-        onRightIconClick = {""}
+      {activePage === 0 && (
+        <section id="explore-page">
+          <TopBar
+            title="Opdag noget nyt"
+            showLeftIcon={false}
+            showRightIcon={true}
+            onLeftIconClick={() => {}}
+            onRightIconClick={() => {}}
+            leftIcon=""
+            rightIcon={NotificaitonIcon}
+          />
+          
+          <SearchBar
+            showCancelIcon={false}
+            placeholderText={"Søg efter steder..."}
+            onclickMethod={() => setActiveState(1)} 
+            onBackClickMethod={() => {}}
+          />
+          
+          <section className="explore-container">
+            <div className="explore-near-you-container">
+              <ExploreNearYou />
+            </div>
 
+            <h1>Vist for nyligt</h1>
+            <div id="small-card-container">
+              <SmallCard title={"Ridetur"} image={Rideturimage} pinIcon={pinIcon} location={"Tupiza, Bolivia"} />
+              <SmallCard title={"Fiskershop"} image={Fiskerspotimage} pinIcon={pinIcon} location={"Rurrenabaque, Bolivia"} />
+              <SmallCard title={"Lokal Marked"} image={Lokalmarkedimage} pinIcon={pinIcon} location={"Sucre, Bolivia"} />
+              <SmallCard title={"Lokal Shop"} image={Lokalshopimage} pinIcon={pinIcon} location={"Marrakech, Marokko"} />
+            </div>
+
+            <div className="section-header">
+              <h1>Hvor skal du hen?</h1>
+              <h4>Udforsk skjulte steder i hele verden</h4>
+            </div>
+            <div id="country-circle-card-container">
+              <CountryCircleCard image={Frankrigimage} countryName="Frankrig" />
+              <CountryCircleCard image={Sverigeimage} countryName="Sverige" />
+              <CountryCircleCard image={indiaimage} countryName="Indien" />
+              <CountryCircleCard image={Brazilimage} countryName="Brasilien" />
+              <CountryCircleCard image={Southafricaimage} countryName="Sydafrika" />
+              <CountryCircleCard image={Mauritiusimage} countryName="Mauritius" />
+              <CountryCircleCard image={Polandimage} countryName="Polen" />
+            </div>
+
+            <h1>Sortér efter</h1>
+            <div id="sort-container">
+              <SortExploreCard icon={addedRecently} text="Tilføjet for nylig" />
+              <SortExploreCard icon={fewViews} text="Få visninger" />
+              <SortExploreCard icon={nearYou} text="Nær dig" />
+              <SortExploreCard icon={popular} text="Populære steder" />
+            </div>
+
+            <h1>Planlæg din næste rejse</h1>
+            <div id="plan-to-travel-container">
+              <PlanToTravelCard image={Cuscoimage} title={"Cusco"} description={"Peru"} />
+              <PlanToTravelCard image={Aucklandimage} title={"Auckland"} description={"New Zealand"} />
+              <PlanToTravelCard image={Colonimage} title={"Colón"} description={"Panama"} />
+              <PlanToTravelCard image={Bukarestimage} title={"Bukarest"} description={"Rumænien"} />
+            </div>
+          </section>
+          <BottomNavigationBar />
+        </section>
+      )}
+
+      {activePage === 1 && (
+       <section id="search-page" className="explore-section">
+  <SearchBar
+            showCancelIcon={true}
+            placeholderText={"Søg efter steder..."}
+            onclickMethod={() => setActiveState(1)} 
+            onBackClickMethod={() => setActiveState(0)}
+          />
+
+  <div className="category-button-container">
+        <CategoryButton icon={FilterIcon} title="Filter" showIcon={true}/>
+        <CategoryButton icon={""} title="Caféer og Restauranter" showIcon={false}/>
+        <CategoryButton icon={""} title="Outdoor"showIcon={false}/>
+        <CategoryButton icon={""} title="Shopping" showIcon={false}/>
+        <CategoryButton icon={""} title="Underholdning" showIcon={false}/>
+        <CategoryButton icon={""} title="Kunst" showIcon={false}/>
+  </div>
+
+  <section className="search-container-explore">
+    <div className="section-header-search">
+      <h2>Seneste søgninger</h2>
+      <h6 className="see-more-link">Se mere</h6>
+    </div>
+
+    <ul className="recent-search-list">
+  {recentSearches.map((search, index) => (
+    <li key={index} className="recent-search-item">
+      <img
+        src={search.icon}
+        alt={search.alt}
+        className="recent-search-icon"
       />
-      <SearchBar
-        showCancelIcon={true}
-        placeholderText={"Søg efter steder..."}
-      />
-      <div className="explore-near-you-container">
-        <ExploreNearYou />
+      <div className="recent-search-text">
+        <h3 className="recent-search-subtitle">{search.subtitle}</h3>
+        <h4 className="recent-search-title">{search.title}</h4>
+
       </div>
-      <h1>Vist for nyligt</h1>
-      <div id="small-card-container">
-        <SmallCard
-          title={"Ridetur"}
-          image={Rideturimage}
-          pinIcon={pinIcon}
-          location={"Tupiza, Bolivia"}
-        />
-        <SmallCard
-          title={"Fiskershop"}
-          image={Fiskerspotimage}
-          pinIcon={pinIcon}
-          location={"Rurrenabaque, Bolivia"}
-        />
-        <SmallCard
-          title={"Lokal Marked"}
-          image={Lokalmarkedimage}
-          pinIcon={pinIcon}
-          location={"Sucre, Bolivia"}
-        />
-        <SmallCard
-          title={"Lokal Shop"}
-          image={Lokalshopimage}
-          pinIcon={pinIcon}
-          location={"Marrakech, Marokko"}
-        />
-      </div>
-      <h1>Opdag noget nyt</h1>
-      <h4>Udforsk skjulte steder i hele verden</h4>
-      <div id="country-circle-card-container">
-        <CountryCircleCard image={Frankrigimage} countryName="Frankrig" />
-        <CountryCircleCard image={Sverigeimage} countryName="Sverige" />
-        <CountryCircleCard image={indiaimage} countryName="Indien" />
-        <CountryCircleCard image={Brazilimage} countryName="Brasilien" />
-        <CountryCircleCard image={Southafricaimage} countryName="Sydafrika" />
-        <CountryCircleCard image={Mauritiusimage} countryName="Mauritius" />
-        <CountryCircleCard image={Polandimage} countryName="Polen" />
-      </div>
-      <h1>Sortér efter</h1>
-      <div id="sort-container">
-        <SortExploreCard icon={addedRecently} text="Tilføjet for nylig" />
-        <SortExploreCard icon={fewViews} text="Få visninger" />
-        <SortExploreCard icon={nearYou} text="Nær dig" />
-        <SortExploreCard icon={popular} text="Populære steder" />
-      </div>
-      <h1>Planlæg din næste rejse</h1>
-      <div id="plan-to-travel-container">
-        <PlanToTravelCard
-          image={Cuscoimage}
-          title={"Cusco"}
-          description={"Peru"}
-        />
-        <PlanToTravelCard
-          image={Aucklandimage}
-          title={"Auckland"}
-          description={"New Zealand"}
-        />
-        <PlanToTravelCard
-          image={Colonimage}
-          title={"Colón"}
-          description={"Panama"}
-        />
-        <PlanToTravelCard
-          image={Bukarestimage}
-          title={"Bukarest"}
-          description={"Rumænien"}
-        />
-      </div>
-      <BottomNavigationBar />
+    </li>
+  ))}
+</ul>
+  </section>
+</section>
+      )}
     </>
   );
 }
 
-export default Explore
+export default Explore;

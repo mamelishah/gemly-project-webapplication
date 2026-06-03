@@ -13,18 +13,13 @@
 
 #onboarding {
   background: var(--background-white);
-  padding: 0;
-  margin: 0;
   width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: var(--radius-xl) 0px;
+  overflow: hidden;
 }
 
 .onboarding-container {
@@ -41,8 +36,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 20px;
   height: 100%;
+  overflow: hidden;
+}
+
+.onboarding-content {
+  flex: 1;
+  overflow: hidden;
+  width: 100%;
+}
+
+.onboarding-content.scrollable {
+  overflow-y: auto;
 }
 
 .onboarding-page {
@@ -83,6 +88,7 @@
   padding: 0;
   cursor: pointer;
   font-size: 16px;
+
 }
 
 #interative-content-onboarding {
@@ -90,6 +96,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 5px;
   justify-content: center;
+  padding: 0 24px;
 }

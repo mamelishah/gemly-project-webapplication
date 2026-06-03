@@ -1,6 +1,12 @@
 import "./PlanToTravelCard.css";
 
-function PlanToTravelCard({image, title, description}) {
+interface PlanToTravelCardProps {
+  image: string;
+  title: string;
+  description: string;
+}
+
+function PlanToTravelCard({image, title, description}: PlanToTravelCardProps) {
   return (
     <section id="plan-to-travel-card">
       <img src={image} alt="Plan Your Trip" />

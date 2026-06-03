@@ -6,6 +6,8 @@ import searchAnimation from "../assets/lotties/seach-preboarding-animation.json"
 import overlayAnimation from "../assets/lotties/overlay-map-preboarding-animation.json";
 import savedAnimation from "../assets/lotties/saved-preboarding-animation.json";
 import destinationAnimation from "../assets/lotties/destination-preboarding-animation.json";
+import globeAnimation from "../assets/lotties/preboarding-globe.webm";
+import globeAnimationSafari from "../assets/lotties/preboarding-safari-comp2-1.mov"
 interface PaginationDotsProps {
   total: number;
   active: number;
@@ -16,6 +18,7 @@ const LottiePlayer = (Lottie as any).default || Lottie;
 
 function PaginationDots({ total, active, onChange }: PaginationDotsProps) {
   return (
+<div style={{ display: "flex", gap: "8px", alignItems: "center", justifyContent: "center", width: "100%", marginBottom: "10px" }}>      {Array.from({ length: total }).map((_, i) => (
 <div style={{ display: "flex", gap: "8px", alignItems: "center", justifyContent: "center", width: "100%", marginBottom: "10px" }}>      {Array.from({ length: total }).map((_, i) => (
         <button
           key={i}
@@ -43,17 +46,29 @@ function Preboarding() {
 
   const pages = [
   <div className="preboarding-page1">
-    <h1 id="preboarding-title">
-      Appen der gør det nemmere at planlægge dine eventyrer
-    </h1>
-    <h2 id="brand-name">
-      {'Gemly'.split('').map((letter, i) => (
-        <span key={i} style={{ animationDelay: `${0.1 + i * 0.1}s` }}>
-          {letter}
-        </span>
-      ))}
-    </h2>
-  </div>,
+  <h1 id="preboarding-title">
+    Appen der gør det nemmere at planlægge dine eventyrer
+  </h1>
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    style={{
+      width: '100%',
+      maxWidth: '460px',
+      maxHeight: '45vh',
+      height: 'auto',
+      objectFit: 'contain',
+      display: 'block',
+      margin: '25px auto 0',
+      mixBlendMode: 'normal'
+    }}
+  >
+    <source src={globeAnimationSafari} type='video/mp4; codecs="hvc1"' />
+    <source src={globeAnimation} type="video/webm" />
+  </video>
+</div>,
 
   <div className="preboarding-page">
     <div className="text-container">
@@ -132,6 +147,17 @@ function Preboarding() {
         <PaginationDots total={4} active={activePage} onChange={setActivePage} />
         <p id="swipe-info">SWIPE FOR MERE INFO</p>
         <button 
+          id="next-button" 
+          onClick={() => {
+            if (activePage === 3) {
+              navigate("/onboarding");
+            } else {
+              setActivePage((prev) => prev + 1);
+            }
+          }}
+        >
+          {activePage === 3 ? "Kom i gang" : "Videre"}
+        </button>
           id="next-button" 
           onClick={() => {
             if (activePage === 3) {

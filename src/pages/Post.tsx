@@ -21,6 +21,9 @@ import CafeIcon from "/src/assets/icons/kategori/cafe-icon-filled.svg";
 import OutdoorIcon from "/src/assets/icons/kategori/outdoor-icon-filled.svg";
 import ShoppingIcon from "/src/assets/icons/kategori/shop-icon-filled.svg";
 import UnderholdningIcon from "/src/assets/icons/kategori/entertainment-icon-filled.svg";
+import cancelIcon from "/src/assets/icons/navigation/cancelBig-icon.svg";
+ 
+
 
 const URL = import.meta.env.VITE_SUPABASE_URL || "";
 const KEY = import.meta.env.VITE_SUPABASE_APIKEY || "";
@@ -97,8 +100,16 @@ function Post() {
 
   return (
     <div className="post-container">
-      <TopBar title="Tilføj opslag" showLeftIcon showRightIcon={false} />
-      <PostPictureCard icon={PlusBigIcon} onImagesSelect={(files) => setImages((prev) => [...prev, ...files])} />
+      <TopBar   title= "Tilføj opslag"
+  showLeftIcon = {true}
+  showRightIcon = {false}
+  onLeftIconClick = {() => {navigate("/explore");}}
+  onRightIconClick = {() => {}} 
+  leftIcon = {cancelIcon}
+  rightIcon = ""
+       />
+      <div className="post-elements">
+        <PostPictureCard icon={PlusBigIcon} onImagesSelect={(files) => setImages((prev) => [...prev, ...files])} />
       <PostTitleCard title="Skriv en passende titel" text={titleText} setText={setTitleText} />
       <PostDescriptionCard description="Skriv en passende beskrivelse" text={descriptionText} setText={setDescriptionText} />
       <PostCategoryCard categoryIcon={MapLocation} title="Tilføj lokation" icon={ArrowRightIcon} options={COUNTRIES_DATA} onSelect={setCountry} />
@@ -117,6 +128,7 @@ function Post() {
     </div>
   </div>
 )}
+      </div>
     </div>
   );
 }

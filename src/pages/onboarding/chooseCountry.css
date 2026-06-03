@@ -14,7 +14,7 @@
 .country-list {
     width: 100%;
     text-align: left;
-    height: 42vh;
+    flex: 1;
     overflow-y: auto;
     margin-top: 20px;
     display: flex;

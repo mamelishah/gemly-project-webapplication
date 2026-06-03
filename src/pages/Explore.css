@@ -1,4 +1,21 @@
+.explore-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--radius-l);
+  padding: 0 20px;
+}
 
+.search-container-explore {
+  padding: 0 20px
+}
+
+#small-card-container,
+#country-circle-card-container,
+#plan-to-travel-container {
+  margin: 0 -20px;
+  padding: 0 20px;
+  width: calc(100% + 40px);
+}
 
 #small-card-container {
   display: flex;
@@ -6,8 +23,6 @@
   overflow-x: auto;
   overflow-y: hidden;
   gap: 1rem;
-  width: 100%;
-  padding: 1rem;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -17,9 +32,7 @@
   flex-direction: row;
   overflow-x: auto;
   overflow-y: hidden;
-  gap: 1rem;
-  width: 100%;
-  padding: 1rem;
+  gap: 0.8rem;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
@@ -27,8 +40,7 @@
 #sort-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 0.5rem;
-  gap: 1rem;
+  gap: 0.7rem;
 }
 
 #plan-to-travel-container {
@@ -37,9 +49,82 @@
   overflow-x: auto;
   overflow-y: hidden;
   gap: 1rem;
-  width: 100%;
-  padding: 1rem;
   box-sizing: border-box;
   scroll-behavior: smooth;
   margin-bottom: 7rem;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 0 20px;
+  width: calc(100% + 40px);
+}
+
+.explore-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.category-button-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  width: 100%;
+  padding: 12px 0;
+  margin: 12px -16px;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+.category-button-container>button {
+  flex-shrink: 0;
+}
+
+.map-container {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+#search-page {
+  margin-top: 30px;
+}
+
+.section-header-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.see-more-link {
+  color: var(--brand-light-green);
+}
+
+
+.recent-search-item {
+  display: flex;
+  align-items: center;
+  margin: 25px 0px;
+  border-radius: var(--radius-l);
+}
+
+.recent-search-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recent-search-item img {
+  height: 44px;
+  width: 44px;
 }

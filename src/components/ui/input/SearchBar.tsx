@@ -2,12 +2,23 @@ import { useState } from "react";
 import "./SearchBar.css";
 import cancelIcon from "/src/assets/icons/navigation/cancelBig-icon.svg";
 import searchIcon from "/src/assets/icons/navbar/search-icon.svg";
+import { useNavigate } from "react-router";
 
-function SearchBar({ showCancelIcon, placeholderText }) {
+
+interface searchBarProps {
+  showCancelIcon: boolean
+  placeholderText: string
+  onclickMethod: () => void
+  onBackClickMethod: () => void
+}
+
+
+function SearchBar({ showCancelIcon, placeholderText, onclickMethod, onBackClickMethod }: searchBarProps) {
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const handleClear = () => {
-    setSearchQuery("");
+      navigate(-1);
   };
 
   const handleSearch = (e: { preventDefault: () => void }) => {
@@ -26,11 +37,12 @@ function SearchBar({ showCancelIcon, placeholderText }) {
             value={searchQuery}
             placeholder={placeholderText}
             onChange={(e) => setSearchQuery(e.target.value)}
+            onClick={onclickMethod}
           />
         </div>
 
         {showCancelIcon ? (
-          <img src={cancelIcon} alt="Clear" onClick={handleClear} />
+          <img src={cancelIcon} alt="Clear" onClick={onBackClickMethod} />
         ) : null}
       </form>
     </>

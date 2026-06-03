@@ -6,7 +6,7 @@ function NavigationsElement({ label, iconUrl, to }: { label: string; iconUrl: st
     <div className="navigations-element">
       <NavLink to={to} className="nav-button">
         <img src={iconUrl} alt={label} className="nav-icon" />
-        <span className="nav-label">{label}</span>
+        <h5 className="nav-label">{label}</h5>
       </NavLink>
     </div>
   );
