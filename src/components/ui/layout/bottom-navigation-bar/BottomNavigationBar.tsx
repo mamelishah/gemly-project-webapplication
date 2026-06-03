@@ -15,7 +15,7 @@ function BottomNavigationBar() {
     <nav id="bottom-navigation-bar-container">
       <ul id="bottom-navigation-bar">
         <li>
-          <NavigationsElement label="Udforsk" iconUrl={udforskIcon} to="/" />
+          <NavigationsElement label="Udforsk" iconUrl={udforskIcon} to="/explore" />
         </li>
         <li>
           <NavigationsElement label="Kort" iconUrl={kortIcon} to="/map" />
