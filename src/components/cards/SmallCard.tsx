@@ -1,13 +1,29 @@
+import { useNavigate } from "react-router-dom";
 import "./SmallCard.css";
 import nearYou from "/src/assets/icons/Sortér efter/nearYou-icon.svg";
 
-function SmallCard({ image, title, pinIcon, location } : { image: string; title: string; pinIcon: string; location: string }) {
+function SmallCard({
+  id,
+  image,
+  title,
+  pinIcon,
+  location,
+}: {
+  id: string | number;
+  image: string;
+  title: string;
+  pinIcon: string;
+  location: string;
+}) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/detail/${id}`);
+  };
+
   return (
-    <section id="small-card">
-      <img
-        src={image}
-        alt="Image"
-      />
+    <section id="small-card" onClick={handleClick}>
+      <img src={image} alt="Image" />
       <div id="small-card-content">
         <div id="small-card-title-row">
           <div id="small-card-title">
