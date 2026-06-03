@@ -1,5 +1,6 @@
 import "./BottomNavigationBar.css";
 import NavigationsElement from "./NavigationsElement";
+import { useNavigate } from "react-router";
 
 import udforskIcon from "../../../../assets/icons/navbar/search-icon.svg";
 import plusIcon from "../../../../assets/icons/navbar/addPost-icon.svg";
@@ -8,6 +9,8 @@ import favoritterIcon from "../../../../assets/icons/navbar/pin-icon.svg";
 import profilIcon from "../../../../assets/icons/navbar/profile-icon.svg";
 
 function BottomNavigationBar() {
+    const navigate = useNavigate();
+
   return (
     <nav id="bottom-navigation-bar-container">
       <ul id="bottom-navigation-bar">
@@ -18,7 +21,7 @@ function BottomNavigationBar() {
           <NavigationsElement label="Kort" iconUrl={kortIcon} to="/map" />
         </li>
         <li className="add-button-container">
-          <button className="add-button">
+          <button className="add-button" onClick={() => navigate("/post")}>
             <img src={plusIcon} alt="plus icon" className="plus-icon" />
           </button>
         </li>

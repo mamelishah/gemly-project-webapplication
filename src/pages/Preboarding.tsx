@@ -15,7 +15,13 @@ const pages = [
     <h1 id="preboarding-title">
       Appen der gør det nemmere at planlægge dine eventyrer
     </h1>
-    <h2 id="brand-name">Gemly</h2>
+    <h2 id="brand-name">
+  {'Gemly'.split('').map((letter, i) => (
+    <span key={i} style={{ animationDelay: `${0.1 + i * 0.1}s` }}>
+      {letter}
+    </span>
+  ))}
+</h2>
   </div>,
   <div className="preboarding-page">
     <div className="text-container">
@@ -96,6 +102,8 @@ function Preboarding() {
 
   return (
     <section id="preboarding" className="preboarding" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+  
+      
       <div className="preboarding-content">
         {pages[activePage]}
       </div>
