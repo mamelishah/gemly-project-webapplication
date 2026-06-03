@@ -33,39 +33,43 @@ import NotificaitonIcon from "/src/assets/icons/navigation/notification-icon.svg
 import { useState } from "react";
 import CategoryButton from '../components/ui/button/CategoryButton';
 
+import CategoryIcon from "/src/assets/icons/kategori/category-icon.svg";
+import ShopCleanIcon from "/src/assets/icons/kategori/shop-clean-icon.svg";
+import OutdoorCleanIcon from "/src/assets/icons/kategori/outdoor-clean-icon.svg";
+
 const recentSearches = [
   {
-    icon: "src/assets/icons/kategori/category-icon.svg",
+    icon: CategoryIcon,
     alt: "City",
     title: "Aarhus",
     subtitle: "Danmarks næststørste by",
   },
   {
-    icon: "src/assets/icons/kategori/category-icon.svg",
+    icon: CategoryIcon,
     alt: "Tree",
     title: "Hovedstad Danmark",
     subtitle: "København",
   },
   {
-    icon: "src/assets/icons/kategori/shop-clean-icon.svg",
+    icon: ShopCleanIcon,
     alt: "Shopping bag",
     title: "Vintage shop i Aarhus",
     subtitle: "All Time Vintage",
   },
   {
-    icon: "src/assets/icons/kategori/category-icon.svg",
+    icon: CategoryIcon,
     alt: "City",
     title: "Odense",
     subtitle: "H.C. Andersens fødeby",
   },
   {
-    icon: "src/assets/icons/kategori/outdoor-clean-icon.svg",
+    icon: OutdoorCleanIcon,
     alt: "Tree",
     title: "Følg en hemmelig rute",
     subtitle: "Mystery Walk i Aarhus",
   },
   {
-    icon: "src/assets/icons/kategori/category-icon.svg",
+    icon: CategoryIcon,
     alt: "City",
     title: "Esbjerg",
     subtitle: "Vigtig havneby og energicentrum",
