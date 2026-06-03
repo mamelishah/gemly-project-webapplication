@@ -27,7 +27,6 @@ import Bukarestimage from "/src/assets/images/plantotravel/bukarest-plan-to-trav
 import Colonimage from "/src/assets/images/plantotravel/colon-plan-to-travel.png";
 import Aucklandimage from "/src/assets/images/plantotravel/auckland-plan-to-travel.png";
 import ExploreNearYou from '../components/cards/ExploreNearYou';
-import DetailCard from '../components/cards/DetailCard';
 
 function Explore() {
   return (
@@ -114,13 +113,8 @@ function Explore() {
           description={"Rumænien"}
         />
       </div>
-      <div className="detail-card-container">
-        <DetailCard
-          image={Rideturimage}
-          title={"Ridetur"}
-          description={"En fantastisk ridetur i Bolivia."}
-        />
-      </div>
+     
+     
       <BottomNavigationBar />
     </>
   );

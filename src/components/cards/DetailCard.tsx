@@ -1,55 +1,65 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import NavigationIcon from "/src/assets/icons/card funktioner/mapLocation-icon.svg";
+
+import NavigationIcon from "/src/assets/icons/card funktioner/navigation-icon.svg";
 import CommentIcon from "/src/assets/icons/card funktioner/comment-icon.png";
+import PinIcon from "/src/assets/icons/navbar/pin-icon.svg";
+import MaplocationIcon from "/src/assets/icons/card funktioner/mapLocation-icon.svg";
+import "./DetailCard.css"
+
 
 interface DetailCardProps {
   image: string;
   title: string;
   description: string;
+  category: string;
+  location: string;
 }
-function DetailCard({ image, title, description }: DetailCardProps) {
-  const { id } = useParams();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+function DetailCard({ image, description, category, location }: DetailCardProps) {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(`/api/items/${id}`);
-        if (!response.ok) throw new Error("Kunne ikke hente data");
- 
 
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (id) {
-      fetchData();
-    }
-  }, [id]);
-
-  if (loading) return <div className="detail-card">Indlæser...</div>;
-  if (error) return <div className="detail-card">Fejl: {error}</div>;
 
   return (
     <div className="detail-card">
-      <img src={image} alt={title} />
+      <img className="detail-card-image" src={image} alt={description} />
       <div className="detail-card-functions"></div>
       <div className="detail-card-functions">
-        <button><img src={NavigationIcon} alt="Location" /></button>
-        <button><img src={CommentIcon} alt="Comment" /></button>
-        <button><img src={CommentIcon} alt="Save" /></button>
+        <button>
+          <img src={NavigationIcon} alt="Location" />
+        </button>
+        <button>
+          <img src={CommentIcon} alt="Comment" />
+        </button>
+        <button>
+          <img src={PinIcon} alt="Save" />
+        </button>
       </div>
-      <div className="detail-card-text">
-      <h2>{title || "Detail Card"}</h2>
+
+      <div className="detail-info-container">
+
+        <div className="detail-card-category">
+          <img className="detail-category-icon" src={category} alt="Category" />
+          <h5>Outdoor</h5>
+        </div>
+
+        <div className="detail-card-location">
+          <img
+            className="detail-location-icon"
+            src={MaplocationIcon}
+            alt="Location"
+          />
+          <h5>Bolivia{location}</h5>
+        </div>
+
+        <div className="detail-card-open">
+          <h6>Åben: Lukker kl. 18:00</h6>
+        </div>
+
+        <div className="detail-card-text">
+          <h3>Beskrivelse:</h3>
+          <h5>{description}</h5>
+        </div>
+
       </div>
-      <p>{description}</p>
-      <p>ID: {id}</p>
+      
     </div>
   );
 }
