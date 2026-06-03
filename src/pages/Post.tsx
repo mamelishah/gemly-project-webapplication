@@ -87,7 +87,7 @@ function Post() {
 
       setShowPopup(true);
       setTimeout(() => {
-        navigate("/");
+        navigate("/explore");
       }, 2500);
 
     } catch (error) {

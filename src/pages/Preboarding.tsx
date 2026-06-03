@@ -1,6 +1,11 @@
 import "./Preboarding.css";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router";
+import Lottie from "lottie-react"; 
+import searchAnimation from "../assets/lotties/seach-preboarding-animation.json";
+import overlayAnimation from "../assets/lotties/overlay-map-preboarding-animation.json";
+import savedAnimation from "../assets/lotties/saved-preboarding-animation.json";
+
 
 interface PaginationDotsProps {
   total: number;
@@ -8,6 +13,7 @@ interface PaginationDotsProps {
   onChange: (index: number) => void;
 }
 
+const LottiePlayer = (Lottie as any).default || Lottie;
 
 
 const pages = [
@@ -39,7 +45,8 @@ const pages = [
     <h2 className="slide-infobox">Gør det nemt at finde hemmelige steder, som lige netop du leder efter</h2>
     </div>
     <div className="slide-image-container">
-      <img src="/assets/preboarding1.png" alt="Preboarding 1" />
+      <LottiePlayer animationData={searchAnimation} loop={true} style={{ width: 300, height: 300 }} />
+      <LottiePlayer animationData={overlayAnimation} loop={true} style={{ width: 300, height: 300 }} />
     </div> 
   </div>,
   <div className="preboarding-page4">
@@ -47,8 +54,8 @@ const pages = [
       <h1 className="slide-title">Gem dine yndlingssteder</h1>
     <h2 className="slide-infobox">Find og gem de steder, der betyder noget for dig</h2>
     </div>
-    <div className="slide-image-container">
-      <img src="/assets/preboarding1.png" alt="Preboarding 1" />
+    <div className="slide-image-container savedAnimation">
+      <LottiePlayer animationData={savedAnimation} loop={true} style={{ width: 350, height: 350}} />
     </div>
   </div>,
 ];
