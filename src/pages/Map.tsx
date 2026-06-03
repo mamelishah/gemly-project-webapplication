@@ -13,6 +13,7 @@ function Map() {
           showCancelIcon={true}
           placeholderText={"Søg efter steder..."}
           onclickMethod={() => {}}
+          onBackClickMethod={() => {}}
         />
       </div>
       <div className="category-button-container">
