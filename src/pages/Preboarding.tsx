@@ -8,8 +8,8 @@ import overlayAnimation from "../assets/lotties/overlay-map-preboarding-animatio
 import savedAnimation from "../assets/lotties/saved-preboarding-animation.json";
 import destinationAnimation from "../assets/lotties/destination-preboarding-animation.json";
 
-// import globeAnimation from "../assets/lotties/preboarding-globe.webm";
-// import globeAnimationSafari from "../assets/lotties/preboarding-safari-comp2-1.mov";
+import globeAnimation from "../assets/lotties/preboarding-globe.webm";
+import globeAnimationSafari from "../assets/lotties/preboarding-safari-comp2-1.mov";
 
 interface PaginationDotsProps {
   total: number;
@@ -77,8 +77,8 @@ function Preboarding() {
           margin: "25px auto 0",
         }}
       >
-        {/* <source src={globeAnimationSafari} type='video/mp4; codecs="hvc1"' />
-    <source src={globeAnimation} type="video/webm" /> */}
+        <source src={globeAnimationSafari} type='video/mp4; codecs="hvc1"' />
+    <source src={globeAnimation} type="video/webm" />
       </video>
     </div>,
 

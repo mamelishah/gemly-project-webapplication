@@ -32,10 +32,10 @@
 
 .detail-card-functions {
   display: flex;
+  width: 100%;
   justify-content: space-around;
-  margin: 24px 0;
   padding: 0 16px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--stroke-light-grey);
   padding-bottom: 16px;
 }
 
@@ -83,6 +83,10 @@
 
 .detail-card-open {
   margin: 16px;
+}
+
+.detail-card-open h6 {
+  font-size: 0.8rem;
 }
 
 .detail-card-text {

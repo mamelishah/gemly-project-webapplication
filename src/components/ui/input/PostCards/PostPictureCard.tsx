@@ -1,14 +1,15 @@
 import "./PostPictureCard.css";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 type PostPictureCardProps = {
   icon: string;
   onImagesSelect: (files: File[]) => void;
+  existingImages?: string[]; 
 };
 
-function PostPictureCard({ icon, onImagesSelect }: PostPictureCardProps) {
+function PostPictureCard({ icon, onImagesSelect, existingImages = [] }: PostPictureCardProps) {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [previews, setPreviews] = useState<string[]>([]);
+const [previews, setPreviews] = useState<string[]>([]);
 
   function handleClick() {
     inputRef.current?.click();
@@ -21,6 +22,13 @@ function PostPictureCard({ icon, onImagesSelect }: PostPictureCardProps) {
     setPreviews((prev) => [...prev, ...newPreviews]);
     onImagesSelect(files);
   }
+
+
+useEffect(() => {
+  if (existingImages.length > 0) {
+    setPreviews(existingImages);
+  }
+}, [existingImages]);
 
   return (
     <div className={`post-picture-row ${previews.length === 0 ? "is-empty" : ""}`}>

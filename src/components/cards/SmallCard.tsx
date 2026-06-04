@@ -25,6 +25,8 @@ function SmallCard({ id, image, title, pinIcon, location, showBookmarkIcon, onDe
     navigate(`/detail/${id}`);
   };
 
+
+
   return (
     <section id="small-card" onClick={handleClick}>
       {showBookmarkIcon ? null : (
@@ -39,7 +41,7 @@ function SmallCard({ id, image, title, pinIcon, location, showBookmarkIcon, onDe
   <div className="bottom-sheet-overlay" onClick={(e) => { e.stopPropagation(); setMenuOpen(false); }}>
     <div className="bottom-sheet" onClick={(e) => e.stopPropagation()}>
       <div className="bottom-sheet-handle" />
-      <button className="bottom-sheet-item" onClick={() => { setMenuOpen(false); }}>
+      <button className="bottom-sheet-item" onClick={() => { setMenuOpen(false); navigate(`/edit-post/${id}`);; }}>
         <span><img src={EditIcon} alt="" /></span> Redigere opslaget
       </button>
       <button className="bottom-sheet-item" onClick={() => { setMenuOpen(false); onDelete?.(); }}>

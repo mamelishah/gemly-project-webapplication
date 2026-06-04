@@ -58,6 +58,8 @@ function AccountPosted() {
   }
 };
 
+
+
   return (
     <>
       <TopBar
@@ -74,6 +76,7 @@ function AccountPosted() {
           const imageUrl = post.post_images?.[0]?.image ?? BrasilienImage;
           return (
             <SmallCard
+            key={post.id}
               id={post.id}
               title={post.title}
               image={imageUrl}
