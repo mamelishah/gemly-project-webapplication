@@ -12,6 +12,7 @@ import Post from './pages/Post';
 import Onboarding from './pages/onboarding/Onboarding';
 import Preboarding from './pages/Preboarding';
 import Account from './pages/Account';
+import EditPost from './pages/EditPost';
 
 
 function App() {
@@ -28,8 +29,9 @@ function App() {
       <Route path="/post" element={<Post />} />
       <Route path="/onboarding" element={<Onboarding />} />
       <Route path="/preboarding" element={<Preboarding />} />
+      <Route path="/edit-post" element={<EditPost />} />
     </Routes>
-  )
+  );
 }
 
 export default App;
