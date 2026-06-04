@@ -18,7 +18,7 @@ function Saved() {
         onBackClickMethod={() => {}}
         onclickMethod={() => {}}
       />
-      <h1 className="saved-album-title">Album</h1>
+     
       <div className="saved-card-container">
         <SavedCard title="Frankrig" />
         <SavedCard title="Sverige" />
