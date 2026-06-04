@@ -2,14 +2,21 @@
     display: flex;
     flex-direction: column;
     gap: var(--radius-m);
+    
 }
 
 .saved-card-container {
     display: flex;
     flex-direction: column;
     gap: var(--radius-m);
+    padding: 16px;
+    margin-bottom: 100px;
 }
 
 .saved-page h1 {
     margin: 0;
+}
+
+.saved-album-title {
+    padding: 8px;
 }
