@@ -2,30 +2,59 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
-  width: 200px;
-  min-width: 200px;
   flex-shrink: 0;
+  max-width: 200px;
   background-color: var(--box-almost-white);
+  position: relative;
 }
 
-#small-card img {
+.menu-button-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  background-color: var(--box-almost-white);
+  border-bottom-left-radius: var(--radius-l);
+  width: 44px;
+  height: 35px;
+}
+
+.menu-button-container img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+#small-card-main-image {
   width: 100%;
   height: auto;
 }
 
 #small-card-content {
-  padding: 0rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: 0 10px;
+  margin-top: 3px;
 }
 
 #small-card-title {
   font-family: var(--main-family-font);
   font-size: larger;
+  width: 100%;
 }
 
 #small-card-title-row {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+#small-card-title h2 {
+  font-size: 1.1rem;
 }
 
 #small-card-location {
@@ -33,6 +62,9 @@
   align-items: center;
   font-family: var(--main-family-font);
   font-size: medium;
+  margin-top: -15px;
+  width: 100%;
+  margin-left: -13px;
 }
 
 #small-card button {
@@ -50,4 +82,71 @@
 #small-card-map-button {
   width: 24px;
   height: 24px;
+  display: block;
+}
+
+#small-card-map-button img {
+  width: 24px;
+  height: 24px;
+}
+
+#small-card-location img {
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+}
+
+.bottom-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bottom-sheet {
+  width: 100%;
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  padding: 12px 0 24px;
+  animation: slideUp 0.25s ease;
+}
+
+.bottom-sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: #ddd;
+  border-radius: 2px;
+  margin: 0 auto 16px;
+}
+
+.bottom-sheet-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+  border: solid 1px var(--stroke-light-grey);
+  margin: 10px;
+  border-radius: var(--radius-l);
+}
+
+.bottom-sheet-item:hover {
+  background: #f5f5f5;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }

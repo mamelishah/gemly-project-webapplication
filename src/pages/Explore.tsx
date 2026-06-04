@@ -108,10 +108,10 @@ function Explore() {
 
             <h1>Vist for nyligt</h1>
             <div id="small-card-container">
-              <SmallCard title={"Ridetur"} image={Rideturimage} pinIcon={pinIcon} location={"Tupiza, Bolivia"} />
-              <SmallCard title={"Fiskershop"} image={Fiskerspotimage} pinIcon={pinIcon} location={"Rurrenabaque, Bolivia"} />
-              <SmallCard title={"Lokal Marked"} image={Lokalmarkedimage} pinIcon={pinIcon} location={"Sucre, Bolivia"} />
-              <SmallCard title={"Lokal Shop"} image={Lokalshopimage} pinIcon={pinIcon} location={"Marrakech, Marokko"} />
+              <SmallCard id={0} title={"Ridetur"} image={Rideturimage} pinIcon={pinIcon} location={"Tupiza, Bolivia"} showBookmarkIcon={true} />
+              <SmallCard id={0} title={"Fiskershop"} image={Fiskerspotimage} pinIcon={pinIcon} location={"Rurrenabaque, Bolivia"} showBookmarkIcon={true}/>
+              <SmallCard id={0} title={"Lokal Marked"} image={Lokalmarkedimage} pinIcon={pinIcon} location={"Sucre, Bolivia"} showBookmarkIcon={true} />
+              <SmallCard id={0} title={"Lokal Shop"} image={Lokalshopimage} pinIcon={pinIcon} location={"Marrakech, Marokko"} showBookmarkIcon={true} />
             </div>
 
             <div className="section-header">

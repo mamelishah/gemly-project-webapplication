@@ -61,7 +61,7 @@ function Post() {
       const postResponse = await fetch(`${URL}/post_users`, {
         method: "POST",
         headers: { "Content-Type": "application/json", apikey: KEY, Prefer: "return=representation" },
-        body: JSON.stringify({ title: titleText.trim(), description: descriptionText.trim(), category, country }),
+        body: JSON.stringify({ title: titleText.trim(), description: descriptionText.trim(), category, country, user_id: 1}),
       });
 
       if (!postResponse.ok) return;
@@ -94,7 +94,7 @@ function Post() {
       }, 2500);
 
     } catch (error) {
-      console.error(error);
+      alert("Der opstod en fejl" + error)
     }
   }
 

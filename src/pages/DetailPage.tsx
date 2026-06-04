@@ -13,8 +13,8 @@ function DetailPage() {
           title={"Ridetur"}
           showLeftIcon={false}
           showRightIcon={false}
-          onLeftIconClick={""}
-          onRightIconClick={""}
+          onLeftIconClick= {() => {}}
+          onRightIconClick={() => {}}
         />
         <DetailCard
           image={Rideturimage}
