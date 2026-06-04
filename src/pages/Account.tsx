@@ -17,19 +17,21 @@ function Account() {
           onRightIconClick={() => {}}
         />
 
-        <div id="edit-profile-button">
-          <img src={editIcon} alt="Edit Icon" />
-          <h4>Administrer din profil</h4>
+        <div className="account-element-container">
+          <div id="edit-profile-button">
+            <img src={editIcon} alt="Edit Icon" />
+            <h4>Administrer din profil</h4>
+          </div>
+          <Link to="/saved">
+            <ProfileCard title="Dine gemte" showBackIcon={true} />
+          </Link>
+          <Link to="/account-posted" style={{ textDecoration: "none" }}>
+            <ProfileCard title="Dine opslag" showBackIcon={true} />
+          </Link>
+          <ProfileCard title="Cookie indstillinger" showBackIcon={true} />
+          <ProfileCard title="Support" showBackIcon={true} />
+          <ProfileCard title="Log af" showBackIcon={false} />
         </div>
-        <Link to="/saved">
-          <ProfileCard title="Dine gemte" showBackIcon={true} />
-        </Link>
-        <Link to="/account-posted" style={{ textDecoration: "none" }}>
-          <ProfileCard title="Dine opslag" showBackIcon={true} />
-        </Link>
-        <ProfileCard title="Cookie indstillinger" showBackIcon={true} />
-        <ProfileCard title="Support" showBackIcon={true} />
-        <ProfileCard title="Log af" showBackIcon={false} />
 
         <BottomNavigationBar />
       </div>
