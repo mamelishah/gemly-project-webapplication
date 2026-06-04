@@ -77,7 +77,7 @@ function Preboarding() {
           margin: "25px auto 0",
         }}
       >
-        <source src={globeAnimationSafari} type='video/mp4; codecs="hvc1"' />
+    <source src={globeAnimationSafari} type='video/mp4; codecs="hvc1"' />
     <source src={globeAnimation} type="video/webm" />
       </video>
     </div>,
