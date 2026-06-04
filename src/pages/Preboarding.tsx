@@ -8,8 +8,8 @@ import overlayAnimation from "../assets/lotties/overlay-map-preboarding-animatio
 import savedAnimation from "../assets/lotties/saved-preboarding-animation.json";
 import destinationAnimation from "../assets/lotties/destination-preboarding-animation.json";
 
-import globeAnimation from "../assets/lotties/preboarding-globe.webm";
-import globeAnimationSafari from "../assets/lotties/preboarding-safari-comp2-1.mov";
+// import globeAnimation from "../assets/lotties/preboarding-globe.webm";
+// import globeAnimationSafari from "../assets/lotties/preboarding-safari-comp2-1.mov";
 
 interface PaginationDotsProps {
   total: number;
@@ -77,8 +77,8 @@ function Preboarding() {
           margin: "25px auto 0",
         }}
       >
-        <source src={globeAnimationSafari} type='video/mp4; codecs="hvc1"' />
-    <source src={globeAnimation} type="video/webm" />
+        {/* <source src={globeAnimationSafari} type='video/mp4; codecs="hvc1"' />
+    <source src={globeAnimation} type="video/webm" /> */}
       </video>
     </div>,
 
@@ -88,8 +88,8 @@ function Preboarding() {
           Find de hemmelige steder til din næste rejse
         </h1>
         <h2 className="slide-infobox">
-          Gemly samler din søgning efter hemmelige steder ét sted — så du slipper
-          for at lede flere steder.
+          Gemly samler din søgning efter hemmelige steder ét sted — så du
+          slipper for at lede flere steder.
         </h2>
       </div>
 
@@ -97,7 +97,12 @@ function Preboarding() {
         <LottiePlayer
           animationData={destinationAnimation}
           loop
-          style={{ width: "100%", height: "100%", maxWidth: 300, maxHeight: 300 }}
+          style={{
+            width: "100%",
+            height: "100%",
+            maxWidth: 300,
+            maxHeight: 300,
+          }}
         />
       </div>
     </div>,
@@ -114,14 +119,24 @@ function Preboarding() {
         <LottiePlayer
           animationData={searchAnimation}
           loop
-          style={{ width: "100%", height: "100%", maxWidth: 300, maxHeight: 300 }}
+          style={{
+            width: "100%",
+            height: "100%",
+            maxWidth: 300,
+            maxHeight: 300,
+          }}
         />
 
         <div className="lottie-overlay">
           <LottiePlayer
             animationData={overlayAnimation}
             loop
-            style={{ width: "100%", height: "100%", maxWidth: 300, maxHeight: 300 }}
+            style={{
+              width: "100%",
+              height: "100%",
+              maxWidth: 300,
+              maxHeight: 300,
+            }}
           />
         </div>
       </div>
@@ -139,7 +154,12 @@ function Preboarding() {
         <LottiePlayer
           animationData={savedAnimation}
           loop
-          style={{ width: "100%", height: "100%", maxWidth: 400, maxHeight: 400 }}
+          style={{
+            width: "100%",
+            height: "100%",
+            maxWidth: 400,
+            maxHeight: 400,
+          }}
         />
       </div>
     </div>,
@@ -195,7 +215,10 @@ function Preboarding() {
         </button>
 
         <p id="already-user">
-          Allerede bruger? <span><a href="/login">Login</a></span>
+          Allerede bruger?{" "}
+          <span>
+            <a href="/login">Login</a>
+          </span>
         </p>
       </div>
     </section>
