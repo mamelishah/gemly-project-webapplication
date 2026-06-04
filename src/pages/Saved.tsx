@@ -1,22 +1,24 @@
 import "./Saved.css";
-import SearchBar from '../components/ui/input/SearchBar';
-import TopBar from '../components/ui/layout/TopBar';
+import SearchBar from "../components/ui/input/SearchBar";
+import TopBar from "../components/ui/layout/TopBar";
 import SavedCard from "../components/cards/savedCard/SavedCard";
-import BottomNavigationBar from '../components/ui/layout/bottom-navigation-bar/BottomNavigationBar';
+import BottomNavigationBar from "../components/ui/layout/bottom-navigation-bar/BottomNavigationBar";
 
 function Saved() {
   return (
     <div className="saved-page">
-      <TopBar 
+      <TopBar
         title="Dine gemte steder"
-        showLeftIcon={false} 
+        showLeftIcon={false}
         showRightIcon={false}
       />
-      <SearchBar 
+      <SearchBar
         showCancelIcon={false}
         placeholderText={"Søg efter steder..."}
+        onBackClickMethod={() => {}}
+        onclickMethod={() => {}}
       />
-      <h1>Album</h1>
+      <h1 className="saved-album-title">Album</h1>
       <div className="saved-card-container">
         <SavedCard title="Frankrig" />
         <SavedCard title="Sverige" />
@@ -27,7 +29,7 @@ function Saved() {
       </div>
       <BottomNavigationBar />
     </div>
-  )
+  );
 }
 
-export default Saved
+export default Saved;
