@@ -22,6 +22,7 @@ import OutdoorIcon from "/src/assets/icons/kategori/outdoor-icon-filled.svg";
 import ShoppingIcon from "/src/assets/icons/kategori/shop-icon-filled.svg";
 import UnderholdningIcon from "/src/assets/icons/kategori/entertainment-icon-filled.svg";
 import cancelIcon from "/src/assets/icons/navigation/cancelBig-icon.svg";
+import { createPost } from "../services/Createpost";
  
 
 
@@ -45,7 +46,6 @@ const COUNTRIES_DATA = [
   { name: "Sverige", code: "se" }, { name: "Tyskland", code: "de" }, { name: "Østrig", code: "at" }
 ];
 
-const LottiePlayer = (Lottie as any).default || Lottie;
 
 function Post() {
   const [titleText, setTitleText] = useState("");
@@ -57,39 +57,19 @@ function Post() {
   const [isSuccess, setIsSuccess] = useState(false);
   const navigate = useNavigate();
 
+
+  // Flyttet database håndteringen ind i service/createpost
   async function handleSubmit() {
     try {
-      const postResponse = await fetch(`${URL}/post_users`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", apikey: KEY, Prefer: "return=representation" },
-        body: JSON.stringify({ title: titleText.trim(), description: descriptionText.trim(), category, country, user_id: 1}),
-      });
+      const success = await createPost({
+      title: titleText,
+      description: descriptionText,
+      category,
+      country,
+      images,
+    });
 
-      if (!postResponse.ok) return;
-      const createdPosts = await postResponse.json();
-      const newPostId = createdPosts[0]?.id;
-
-      if (newPostId && images.length > 0) {
-        for (const file of images) {
-          const fileName = `${Date.now()}_${file.name}`;
-
-          const storageResponse = await fetch(`${BASE_URL}/storage/v1/object/post-images/${fileName}`, {
-            method: "POST",
-            headers: { apikey: KEY, Authorization: `Bearer ${KEY}`, "Content-Type": file.type },
-            body: file,
-          });
-
-          if (storageResponse.ok) {
-            await fetch(`${URL}/post_images`, {
-              method: "POST",
-              headers: { "Content-Type": "application/json", apikey: KEY },
-              body: JSON.stringify({ post_id: newPostId, image: `${BASE_URL}/storage/v1/object/public/post-images/${fileName}` }),
-            });
-          }
-        }
-      }
-
-      setShowPopup(true);
+      setShowPopup(success);
       setIsSuccess(true);
       setTimeout(() => {
         navigate("/explore");
