@@ -3,7 +3,6 @@
   border-radius: 8px;
   overflow: hidden;
   flex-shrink: 0;
-  max-width: 200px;
   background-color: var(--box-almost-white);
   position: relative;
 }
@@ -28,7 +27,8 @@
 
 #small-card-main-image {
   width: 100%;
-  height: auto;
+  height: 160px;
+  object-fit: cover;
 }
 
 #small-card-content {
@@ -62,7 +62,7 @@
   align-items: center;
   font-family: var(--main-family-font);
   font-size: medium;
-  margin-top: -15px;
+  margin-top: -10px;
   width: 100%;
   margin-left: -13px;
 }
