@@ -15,7 +15,7 @@ function PaginationDots({ total, active, onChange }: PaginationDotsProps) {
         alignItems: "center",
         justifyContent: "center",
         width: "100%",
-        marginBottom: "10px",
+        marginBottom: total === 6 ? "10px" : "0",
       }}
     >
       {Array.from({ length: total }).map((_, i) => (
@@ -33,6 +33,7 @@ function PaginationDots({ total, active, onChange }: PaginationDotsProps) {
             cursor: "pointer",
             padding: 0,
             transition: "all 0.2s ease",
+
           }}
         />
       ))}

@@ -9,6 +9,8 @@
     display: flex;
     flex-direction: column;
     padding: 0px 20px;
+    flex: 1;
+    overflow: hidden;
 }
 
 .country-list {
@@ -22,8 +24,16 @@
     gap: 24px;
     padding-bottom: 20px;
     border-radius: var(--radius-m);
+    min-height: 0;
 }
 
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    min-height: 0;
+}
 
 
 .country-item {

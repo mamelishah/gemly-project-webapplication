@@ -15,10 +15,10 @@ function Onboarding() {
   const navigate = useNavigate();
 
   const pages = [
-    <div className="onboarding-page" >
-      <h1 id="onboarding-title">Velkommen til </h1>
-      <h2 id="onboarding-subtitle">Gemly</h2>
-      <h3 id="onboarding-subsubitle">Nu er du klar til at lave din egen profil</h3>
+    <div className="onboarding-page first-slide-onboarding" >
+        <h1 id="onboarding-title">Velkommen til </h1>
+        <h2 id="onboarding-subtitle">Gemly</h2>
+        <h3 id="onboarding-subsubitle">Nu er du klar til at lave din egen profil</h3>
     </div>,
     <SlideCreateUser isActive={activePage === 1}/>,
     <SlideCreatePassword isActive={activePage === 2} />,
@@ -44,11 +44,11 @@ function Onboarding() {
       setActivePage((prev) => Math.max(prev - 1, 0));
     }
   };
-
   return (
     <section id="onboarding" className={`onboarding ${activePage === 0 ? "first-slide-bg" : ""}`} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
       <div className="onboarding-element" id="onboarding-elements">
-<div className={`onboarding-content ${activePage === 4 ? "scrollable" : ""}`}>          {pages.map((page, index) => (
+<div className={`onboarding-content ${activePage === 4 || activePage === 5 ? "scrollable" : ""}`}
+>          {pages.map((page, index) => (
             <div
               key={index}
               style={{ 

@@ -26,7 +26,7 @@ function InputField({
   return (
     <div className="input-field">
       {" "}
-      <label htmlFor={id}>{label}</label>{" "}
+      <label className="sr-only" htmlFor={id}>{label}</label>{" "}
       <input
         id={id}
         ref={inputRef}

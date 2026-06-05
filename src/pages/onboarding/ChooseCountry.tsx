@@ -41,7 +41,7 @@ function ChooseCountry() {
           <div className="searchbar-container">
             <img src={searchIcon} alt="Search" />
             <form action="">
-              <label htmlFor="search-input-country">Søg efter land</label>
+              <label className="sr-only" htmlFor="search-input-country">Søg efter land</label>
             <input
               id="search-input-country"
               name="search"

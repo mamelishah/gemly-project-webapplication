@@ -32,6 +32,7 @@ body {
   height: 44px;
   padding: 10px;
   border: 1px solid var(--Light-Grey---border-stroke, rgba(153, 153, 153, 0.2));
+  position: relative;
 }
 
 .add-button {
@@ -44,7 +45,3 @@ body {
 .active img {
   filter: brightness(2) saturate(250%) invert(45%) sepia(200%) saturate(150%) hue-rotate(50deg);
 }
-
-
-
-
