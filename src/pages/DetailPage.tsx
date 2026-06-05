@@ -4,6 +4,7 @@ import TopBar from "../components/ui/layout/TopBar";
 import DetailCard from "../components/cards/DetailCard";
 import LeftArrow from "/src/assets/icons/navigation/arrowLeftBig-icon.svg";
 
+
 const BASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const APIKEY = import.meta.env.VITE_SUPABASE_APIKEY;
 const headers = { apikey: APIKEY, Authorization: `Bearer ${APIKEY}` };
@@ -55,7 +56,7 @@ function DetailPage() {
           onLeftIconClick={() => navigate(-1)}
           onRightIconClick={() => {}}
           leftIcon={LeftArrow}
-          rightIcon=""
+          rightIcon={""}
         />
         <DetailCard
           image={imageUrl}

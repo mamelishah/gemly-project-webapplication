@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
+import { useState} from "react";
 import { createPortal } from "react-dom";
 import "./SmallCard.css";
 import nearYou from "/src/assets/icons/Sortér efter/nearYou-icon.svg";
@@ -24,8 +24,6 @@ function SmallCard({ id, image, title, pinIcon, location, showBookmarkIcon, onDe
   const handleClick = () => {
     navigate(`/detail/${id}`);
   };
-
-
 
   return (
     <section id="small-card" onClick={handleClick}>

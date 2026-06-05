@@ -9,8 +9,8 @@ import PostCategoryCard from "../components/ui/input/PostCards/PostCategoryCard"
 import PostButtonCard from "../components/ui/input/PostCards/PostButtonCard";
 import "./Post.css";
 
+import PostModal from "../components/ui/layout/modals/PostModal"
 
-import successAnimation from "../assets/lotties/gemly-tick.json";
 
 import PlusBigIcon from "../assets/icons/navigation/plusBig-icon.svg";
 import CategoryIcon from "../assets/icons/kategori/category-icon.svg";
@@ -53,7 +53,8 @@ function Post() {
   const [country, setCountry] = useState<string | null>(null);
   const [category, setCategory] = useState<string | null>(null);
   const [images, setImages] = useState<File[]>([]);
-  const [showPopup, setShowPopup] = useState(false); 
+  const [showPopup, setShowPopup] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const navigate = useNavigate();
 
   async function handleSubmit() {
@@ -89,12 +90,14 @@ function Post() {
       }
 
       setShowPopup(true);
+      setIsSuccess(true);
       setTimeout(() => {
         navigate("/explore");
       }, 2500);
 
     } catch (error) {
-      alert("Der opstod en fejl" + error)
+      setIsSuccess(false);
+      setShowPopup(true);
     }
   }
 
@@ -120,15 +123,12 @@ function Post() {
         <PostButtonCard title="Slå op" classNameButton="post-button-post" onClickMethod={handleSubmit} />
       </div>
 
-      {showPopup && (
-  <div className="popup-overlay">
-    <div className="popup-box">
-      <LottiePlayer animationData={successAnimation} loop={false} style={{ width: 150, height: 150 }} />
-      <h3>Opslag oprettet!</h3>
-    </div>
-  </div>
-)}
-      </div>
+{showPopup && (
+  <PostModal
+    isSuccesfull={isSuccess}
+    message={isSuccess ? "Opslag oprettet!" : "Der skete en fejl, prøv igen"}
+  />
+)}      </div>
     </div>
   );
 }
