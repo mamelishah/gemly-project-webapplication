@@ -1,6 +1,9 @@
-import { useState, useEffect, useRef } from "react"; // 1. Tilføjet useEffect og useRef her
+import { useState, useEffect, useRef } from "react"; 
 import "./onboarding.css";
 import "./slideCreateUser.css";
+
+import {InputField} from "../../components/index"
+
 
 interface SlideProps {
   isActive: boolean;
@@ -24,19 +27,22 @@ function CreatePassword({ isActive }: SlideProps) {
       <div className="main-content">
         <div className="text-container-onboarding">
           <h1 className="slide-title">Vælg adgangskode</h1>
-          <h2 className="slide-subtitle"></h2>
           <p className="slide-infobox">Lav en adgangskode med mindst 8 tegn. Det skal være noget andre ikke kan gætte.</p>
         </div>
 
         <div className="input-container">
-          <input
-            ref={inputRef} 
+          <form action="">
+            <InputField
+            inputRef={inputRef}
             type="password"
             maxLength={20}
             placeholder="Vælg en adgangskode"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={setPassword}
+                label="brugernavn"
+    id="input-password"
           />
+          </form>
           <span className="char-count">{password.length}/20</span>
         </div>
       </div>

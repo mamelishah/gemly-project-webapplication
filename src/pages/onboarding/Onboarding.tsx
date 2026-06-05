@@ -2,40 +2,12 @@ import "./onboarding.css";
 import { useState, useRef } from "react";
 import SlideCreateUser from "./SlideCreateUser";
 import SlideCreatePassword from "./CreatePassword";
-import TopBar from "../../components/ui/layout/TopBar";
 import AddProfilImage from "./AddProfilImage";
 import ChooseCountry from "./ChooseCountry";
 import ChooseTravelDes from "./ChooseTravelDes";
 import { useNavigate } from "react-router";
 
-interface PaginationDotsProps {
-  total: number;
-  active: number;
-  onChange: (index: number) => void;
-}
-
-function PaginationDots({ total, active, onChange }: PaginationDotsProps) {
-  return (
-    <div style={{ display: "flex", gap: "8px", marginBottom: "5px", alignItems: "center" }}>
-      {Array.from({ length: total }).map((_, i) => (
-        <button
-          key={i}
-          onClick={() => onChange(i)}
-          style={{
-            width: i === active ? "14px" : "10px",
-            height: i === active ? "14px" : "10px",
-            borderRadius: "50%",
-            backgroundColor: i === active ? "#222" : "#bbb",
-            border: "none",
-            cursor: "pointer",
-            padding: 0,
-            transition: "all 0.2s ease",
-          }}
-        />
-      ))}
-    </div>
-  );
-}
+import PaginationDots from "../../components/ui/layout/PaginationDots";
 
 function Onboarding() {
   const [activePage, setActivePage] = useState(0);

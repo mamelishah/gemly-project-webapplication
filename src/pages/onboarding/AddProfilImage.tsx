@@ -11,7 +11,6 @@ function AddProfilImage() {
           
         <div className="text-container-onboarding">
           <h1 className="slide-title">Vælg et profilbillede</h1>
-          <h2 className="slide-subtitle"></h2>
           <p className="slide-infobox">Tilføj et billede af dig selv, så andre kan se hvem du er, når du poster eller kommenterer opslag</p>
         </div>
         <div className= "profile-image-placeholder">

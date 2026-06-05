@@ -40,7 +40,7 @@
       rgba(255, 255, 255, 1) 75%);
 
   background-size: 100% 200%;
-  animation: gradientShimmer 5s ease-in-out infinite;
+  animation: gradientShimmer 6s ease-in-out infinite;
 
   position: relative;
   overflow: hidden;
@@ -155,10 +155,16 @@ a {
   font-weight: 500;
 }
 
+
 #swipe-info,
 #already-user {
-  font-size: 13px;
+  font-size: 1rem;
   text-align: center;
   width: 100%;
-  margin-top: 15px;
+  margin-top: 20px;
+}
+
+#swipe-info {
+  margin-bottom: 15px;
+  font-size: 0.8rem;
 }

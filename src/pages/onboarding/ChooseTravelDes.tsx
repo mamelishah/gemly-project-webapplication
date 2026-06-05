@@ -12,7 +12,6 @@ function ChooseTravelDes() {
       <div className="main-content">
         <div className="text-container-onboarding">
           <h1 className="slide-title">Hvilke lande vil du gerne udforske?</h1>
-          <h2 className="slide-subtitle"></h2>
           <p className="slide-infobox">Vælg hvilke lande du vil udforske</p>
         </div>
 

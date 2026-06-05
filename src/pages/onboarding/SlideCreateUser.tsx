@@ -2,6 +2,7 @@ import {useState, useEffect, useRef} from "react";
 import "./onboarding.css";
 import "./slideCreateUser.css";
 
+import {InputField} from "../../components/index"
 
 interface SlideProps {
   isActive: boolean;
@@ -27,20 +28,22 @@ function SlideCreateUser({isActive}: SlideProps) {
           
         <div className="text-container-onboarding">
           <h1 className="slide-title">Hvad skal vi kalde dig?</h1>
-          <h2 className="slide-subtitle"></h2>
           <p className="slide-infobox">Lav et brugernavn ud fra dit navn. Du kan ændre det når som helst.</p>
         </div>
 
         <div className="input-container">
-          <input
-                      ref={inputRef} 
-
-            type="text"
-            maxLength={20}
-            placeholder="Vælg et brugernavn"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+          <form action="">
+            <InputField
+                      inputRef={inputRef}
+    type="text"
+    placeholder="Vælg et brugernavn"
+    value={username}
+    onChange={setUsername}
+    maxLength={20}
+    label="brugernavn"
+    id="input-create-username"
           />
+          </form>
           <span className="char-count">{username.length}/20</span>
         </div>
       </div>

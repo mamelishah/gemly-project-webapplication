@@ -34,13 +34,14 @@ function ChooseCountry() {
       <div className="main-content">
         <div className="text-container-onboarding">
           <h1 className="slide-title">Hvor kommer du fra?</h1>
-          <h2 className="slide-subtitle"></h2>
           <p className="slide-infobox">Vælg hvilke lande du vil udforske</p>
         </div>
 
         <div className="search-container">
           <div className="searchbar-container">
             <img src={searchIcon} alt="Search" />
+            <form action="">
+              <label htmlFor="search-input-country">Søg efter land</label>
             <input
               id="search-input-country"
               name="search"
@@ -48,6 +49,7 @@ function ChooseCountry() {
               placeholder="Søg..."
               onChange={(e) => setSearchQuery(e.target.value)}
             />
+            </form>
           </div> 
 
           <div className="country-list">

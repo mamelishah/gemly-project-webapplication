@@ -9,7 +9,7 @@
   --error-red: #a33130;
   --brand-light-green: #6f9c46;
   --icon-orange: #f9be83;
-  
+
   /* Radius & Spacing */
   --radius-xs: 4px;
   --radius-s: 8px;
@@ -22,6 +22,7 @@
   --main-family-font: "Helvetica", sans-serif;
   --logo-family-font: "Lemon", serif;
 }
+
 h1 {
   font-family: var(--main-family-font);
   font-size: 1.3rem;
@@ -62,4 +63,18 @@ h6 {
   font-size: 0.8rem;
   font-weight: bold;
   color: var(--regular-text);
+}
+
+
+/* Til de usynlige label for skærmlæsere. Skærmlæsere kan ikke forstå placeholders, så vi skal have et label for dem, som de kan læse. Vi gør disse labels usynlige her. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

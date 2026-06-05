@@ -3,53 +3,12 @@ import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 
-import searchAnimation from "../assets/lotties/seach-preboarding-animation.json";
-import overlayAnimation from "../assets/lotties/overlay-map-preboarding-animation.json";
-import savedAnimation from "../assets/lotties/saved-preboarding-animation.json";
-import destinationAnimation from "../assets/lotties/destination-preboarding-animation.json";
+import {searchAnimation, overlayAnimation, savedAnimation, destinationAnimation, globeAnimation, globeAnimationSafari} from "../assets/lotties/index"
 
-import globeAnimation from "../assets/lotties/preboarding-globe.webm";
-import globeAnimationSafari from "../assets/lotties/preboarding-safari-comp2-1.mov";
+import {PaginationDots} from "../components/index";
 
-interface PaginationDotsProps {
-  total: number;
-  active: number;
-  onChange: (index: number) => void;
-}
 
 const LottiePlayer = (Lottie as any).default || Lottie;
-
-function PaginationDots({ total, active, onChange }: PaginationDotsProps) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        gap: "8px",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "100%",
-        marginBottom: "10px",
-      }}
-    >
-      {Array.from({ length: total }).map((_, i) => (
-        <button
-          key={i}
-          onClick={() => onChange(i)}
-          style={{
-            width: i === active ? "14px" : "10px",
-            height: i === active ? "14px" : "10px",
-            borderRadius: "50%",
-            backgroundColor: i === active ? "#222" : "#bbb",
-            border: "none",
-            cursor: "pointer",
-            padding: 0,
-            transition: "all 0.2s ease",
-          }}
-        />
-      ))}
-    </div>
-  );
-}
 
 function Preboarding() {
   const [activePage, setActivePage] = useState(0);
@@ -67,6 +26,8 @@ function Preboarding() {
         loop
         muted
         playsInline
+        aria-hidden="true"
+        role="presentation"
         style={{
           width: "100%",
           maxWidth: "460px",
@@ -184,7 +145,7 @@ function Preboarding() {
   };
 
   return (
-    <section
+    <main
       id="preboarding"
       className="preboarding"
       onTouchStart={handleTouchStart}
@@ -221,7 +182,7 @@ function Preboarding() {
           </span>
         </p>
       </div>
-    </section>
+    </main>
   );
 }
 
