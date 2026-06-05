@@ -24,12 +24,6 @@ import UnderholdningIcon from "/src/assets/icons/kategori/entertainment-icon-fil
 import cancelIcon from "/src/assets/icons/navigation/cancelBig-icon.svg";
 import { createPost } from "../services/Createpost";
  
-
-
-const URL = import.meta.env.VITE_SUPABASE_URL || "";
-const KEY = import.meta.env.VITE_SUPABASE_APIKEY || "";
-const BASE_URL = URL.replace("/rest/v1/", "").replace("/rest/v1", "");
-
 const CATEGORIES = [
   { name: "Kunst", code: "kunst", icon: KunstIcon },
   { name: "Outdoor", code: "outdoor", icon: OutdoorIcon },
@@ -71,9 +65,7 @@ function Post() {
 
       setShowPopup(success);
       setIsSuccess(true);
-      setTimeout(() => {
-        navigate("/explore");
-      }, 2500);
+     ;
 
     } catch (error) {
       setIsSuccess(false);

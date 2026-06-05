@@ -1,4 +1,4 @@
-import "./accountPosted.css"
+import "./accountPosted.css";
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,56 +9,51 @@ import CategoryIcon from "../assets/icons/kategori/category-icon.svg";
 import BrasilienImage from "../assets/images/countries/Brasilien/Brazil-main-image.png";
 import LeftArrow from "../assets/icons/navigation/arrowLeftBig-icon.svg";
 
-const BASE_URL = import.meta.env.VITE_SUPABASE_URL;
-const APIKEY = import.meta.env.VITE_SUPABASE_APIKEY;
+import PostModal from "../components/ui/layout/modals/PostModal";
 
-const headers = {
-  apikey: APIKEY,
-  "Content-Type": "application/json",
-};
+import { DeletePost } from "../services/DeletePost";
+import { GetAllPostFromCurrentUser } from "../services/GetAllPostFromCurrentUser";
 
 function AccountPosted() {
   const navigate = useNavigate();
   const [posts, setPosts] = useState<any[]>([]);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleBack = () => {
     navigate(-1);
   };
 
-  useEffect(() => {
-    async function fetchPosts() {
+  async function fetchPosts() {
       try {
-        const url = `${BASE_URL}post_users?select=*,post_images(image)&user_id=eq.1`;
-        const response = await fetch(url, { headers });
-        const data = await response.json();
-        console.log("Posts:", data);
+        const data = await GetAllPostFromCurrentUser();
         setPosts(data);
       } catch (err) {
-        console.log(err);
+        setIsSuccess(false);
+        setShowPopup(true)
+        setTimeout(() => setShowPopup(false), 2500);
       }
     }
 
+    useEffect(() => {
     fetchPosts();
   }, []);
 
-
   const handleDelete = async (id: string) => {
-  try {
-    await fetch(`${BASE_URL}post_images?post_id=eq.${id}`, {
-      method: "DELETE",
-      headers,
-    });
-    await fetch(`${BASE_URL}post_users?id=eq.${id}`, {
-      method: "DELETE",
-      headers,
-    });
-    setPosts((prev) => prev.filter((post) => post.id !== id));
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-
+    try {
+      await DeletePost(id);
+      await fetchPosts();
+      setPosts((prev) => prev.filter((post) => post.id !== id));
+      setIsSuccess(true)
+      setShowPopup(true)
+      setTimeout(() => setShowPopup(false), 2500);
+    } catch (err) {
+      setShowPopup(true)
+      console.log(err);
+      setTimeout(() => setShowPopup(false), 2500);
+       
+    }
+  };
 
   return (
     <>
@@ -76,18 +71,26 @@ function AccountPosted() {
           const imageUrl = post.post_images?.[0]?.image ?? BrasilienImage;
           return (
             <SmallCard
-            key={post.id}
+              key={post.id}
               id={post.id}
               title={post.title}
               image={imageUrl}
               pinIcon={CategoryIcon}
               location={post.country}
-              showBookmarkIcon = {false}
+              showBookmarkIcon={false}
               onDelete={() => handleDelete(post.id)}
             />
           );
         })}
       </div>
+      {showPopup && (
+        <PostModal
+          isSuccesfull={isSuccess}
+          message={
+            isSuccess ? "Opslag slettet!" : "Der skete en fejl, prøv igen"
+          }
+        />
+      )}
       <BottomNavigationBar />
     </>
   );

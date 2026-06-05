@@ -12,7 +12,6 @@ interface CreatePostData {
 }
 
 export async function createPost(data: CreatePostData): Promise<boolean> {
-
   // Henter postet fra tablen post_users
   const postResponse = await fetch(`${URL}/post_users`, {
     method: "POST",
@@ -37,6 +36,7 @@ export async function createPost(data: CreatePostData): Promise<boolean> {
   // Tjekker om opslaget har et id og om brugeren har postet et billede
   if (newPostId && data.images.length > 0) {
     // Looper igennem billederne og tildele hvert billede en filnavn med tilhørende dato på billedet
+    // Og dereefter poster hvert billede tl post_images
     for (const file of data.images) {
       const fileName = `${Date.now()}_${file.name}`;
 
