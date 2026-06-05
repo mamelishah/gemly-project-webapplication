@@ -5,8 +5,8 @@ function NavigationsElement({ label, iconUrl, to }: { label: string; iconUrl: st
   return (
     <div className="navigations-element">
       <NavLink to={to} className="nav-button">
-        <img src={iconUrl} alt={label} className="nav-icon" />
-        <h5 className="nav-label">{label}</h5>
+        <img src={iconUrl} alt={`Ikon af ${label}`} className="nav-icon" />
+        <p className="nav-label">{label}</p>
       </NavLink>
     </div>
   );

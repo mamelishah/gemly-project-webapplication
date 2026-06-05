@@ -25,10 +25,10 @@ function TopBar({
   const hasIcons = showLeftIcon || showRightIcon;
 
   return (
-    <section id="top-bar" className={!hasIcons ? "centered" : ""}>
+    <header id="top-bar" className={!hasIcons ? "centered" : ""}>
       {showLeftIcon ? (
         <button id="top-bar-back-button" onClick={onLeftIconClick}>
-          <img src={leftIcon} alt="Left" />
+          <img src={leftIcon} alt= "Ikon af tilbage knap" />
         </button>
       ) : <div className="top-bar-placeholder" />}
 
@@ -36,10 +36,10 @@ function TopBar({
 
       {showRightIcon ? (
         <button id="top-bar-close-button" onClick={onRightIconClick}>
-          <img src={rightIcon} alt="Right" />
+          <img src={rightIcon} alt="Ikon af tilbage knap" />
         </button>
       ) : <div className="top-bar-placeholder" />}
-    </section>
+    </header>
   );
 }
 

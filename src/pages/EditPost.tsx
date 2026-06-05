@@ -40,7 +40,7 @@ function EditPost() {
   const [images, setImages] = useState<File[]>([]);
 
   const CATEGORIES = [
-    { name: "Kunst", code: "kunst",  },
+    { name: "Kunst", code: "kunst", icon: KunstIcon },
     { name: "Outdoor", code: "outdoor", icon: OutdoorIcon },
     { name: "Caféer og Restauranter", code: "cafeer", icon: CafeIcon },
     { name: "Underholdning", code: "underholdning", icon: UnderholdningIcon },
@@ -119,7 +119,7 @@ function EditPost() {
         <PostPictureCard
   icon={PlusBigIcon}
   onImagesSelect={(files) => setImages((prev) => [...prev, ...files])}
-  existingImages={existingImages} // ← tilføj
+  existingImages={existingImages} 
 />
         <PostTitleCard
           title="Skriv en passende titel"

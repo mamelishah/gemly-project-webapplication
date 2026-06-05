@@ -1,11 +1,16 @@
 import "./CountryCircleCard.css";
 
-function CountryCircleCard({image, countryName}) {
+interface CountryCircleProp {
+  image: string,
+  countryName: string
+}
+
+function CountryCircleCard({image, countryName} : CountryCircleProp) {
   return (
-    <section className="country-circle-card">
-      <img id="country-image" src={image} alt="France Circle" />
+    <article className="country-circle-card">
+      <img id="country-image" src={image} alt={`${countryName} image`} />
       <h5 id="country-name">{countryName}</h5>
-    </section>
+    </article>
   );
 }
 

@@ -1,12 +1,17 @@
 import "./SavedCard.css"
 
-function SavedCard({title}) {
+interface SavedCardProp {
+    title: string
+}
+
+
+function SavedCard({title} : SavedCardProp) {
     return (
-        <section className="saved-card">
+        <article className="saved-card">
             <div id="saved-card-content">
                 <h2>{title}</h2>
             </div>
-        </section>
+        </article>
     );
 }
 

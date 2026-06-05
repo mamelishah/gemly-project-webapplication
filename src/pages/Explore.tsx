@@ -183,7 +183,6 @@ function Explore() {
       <div className="recent-search-text">
         <h3 className="recent-search-subtitle">{search.subtitle}</h3>
         <h4 className="recent-search-title">{search.title}</h4>
-
       </div>
     </li>
   ))}

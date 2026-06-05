@@ -15,4 +15,9 @@
   text-decoration: none;
 }
 
-
+.nav-label {
+  font-family: var(--main-family-font);
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: var(--regular-text);
+}

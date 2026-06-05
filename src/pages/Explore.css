@@ -27,6 +27,22 @@
   scroll-behavior: smooth;
 }
 
+#small-card-container::-webkit-scrollbar {
+  display: none;
+}
+
+#small-card-container {
+  scrollbar-width: none;
+}
+
+#country-circle-card-container::-webkit-scrollbar {
+  display: none;
+}
+
+#country-circle-card-container {
+  scrollbar-width: none;
+}
+
 #country-circle-card-container {
   display: flex;
   flex-direction: row;
@@ -35,6 +51,14 @@
   gap: 0.8rem;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}
+
+#plan-to-travel-containerr::-webkit-scrollbar {
+  display: none;
+}
+
+#plan-to-travel-container {
+  scrollbar-width: none;
 }
 
 #sort-container {

@@ -86,9 +86,24 @@
 }
 
 .detail-card-open h6 {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
+}
+
+#open-text {
+  color: green;
 }
 
 .detail-card-text {
   margin: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detail-card-text h3 {
+  font-size: 1.3rem;
+}
+
+.detail-card-text h5 {
+  font-size: 1.1rem;
 }

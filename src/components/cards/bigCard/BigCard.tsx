@@ -3,9 +3,17 @@ import polenImage from "/src/assets/images/countries/Polen/polen-main-image.png"
 import locationIcon from "/src/assets/icons/card funktioner/mapLocation-icon.svg";
 import pinIcon from "/src/assets/icons/navbar/pin-icon.svg";
 
-export function BigCard({category, location, title, categoryIcon}) {
+interface BigCardProps {
+  category: string,
+  location: string,
+  title: string,
+  categoryIcon: string
+}
+
+
+export function BigCard({category, location, title, categoryIcon} : BigCardProps) {
   return (
-    <section className="big-card">
+    <article className="big-card">
       <img id="big-card-image" src={polenImage} alt="Polen Image" />
       <div id="card-content">
         <div id="card-header">
@@ -14,16 +22,16 @@ export function BigCard({category, location, title, categoryIcon}) {
         </div>
         <div id="card-info">
             <div id="category">
-                <img src={categoryIcon} alt="Category Icon" />
+                <img src={categoryIcon} alt="" />
                 <span>{category}</span>
             </div>
             <div id="location">
-                <img src={locationIcon} alt="Location Icon" />
+                <img src={locationIcon} alt="" />
                 <span id="location">{location}</span>
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 }
 

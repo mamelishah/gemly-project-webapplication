@@ -20,8 +20,6 @@ interface DetailCardProps {
   location: string;
 }
 
-
-
 function checkCategory(category: string): string | undefined {
   switch (category) {
     case "Kunst":
@@ -49,8 +47,8 @@ function DetailCard({ image, title, description, category, location }: DetailCar
   const categoryIcon = checkCategory(category)
 
   return (
-    <div className="detail-card">
-      <img className="detail-card-image" src={image} alt={title} />
+    <article className="detail-card">
+      <img className="detail-card-image" src={image} alt={`Billede af ${title}`} />
       <div className="detail-card-functions">
         <BottomNavigationElement label="Navigation" iconUrl={NavigationIcon} to=""/>
         <BottomNavigationElement label="Kommentarer" iconUrl={CommentIcon} to=""/>
@@ -59,21 +57,21 @@ function DetailCard({ image, title, description, category, location }: DetailCar
       <div className="detail-info-container">
         <div className="detail-card-category">
           <img src={categoryIcon} alt="" />
-          <h5>{category}</h5> 
+          <p>{category}</p> 
         </div>
         <div className="detail-card-location">
-          <img className="detail-location-icon" src={MaplocationIcon} alt="Location" />
-          <h5>{location}</h5>  
+          <img className="detail-location-icon" src={MaplocationIcon} alt="" />
+          <p>{location}</p>  
         </div>
         <div className="detail-card-open">
-          <h6><span id="open-text">Åben</span>: Lukker kl. 18:00</h6>
+          <p><span id="open-text">Åben</span> ● Lukker kl. 18:00</p>
         </div>
-        <div className="detail-card-text">
-          <h3>Beskrivelse:</h3>
-          <h5>{description}</h5>
-        </div>
+        <section className="detail-card-text">
+          <h2>Beskrivelse:</h2>
+          <p>{description}</p>
+        </section>
       </div>
-    </div>
+    </article>
   );
 }
 
