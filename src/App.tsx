@@ -3,7 +3,7 @@ import './App.css'
 
 /* Importing the pages */
 import Explore from './pages/Explore';
-import Map from './pages/Map';
+import Map from './pages/Map/Map';
 import AccountPosted from './pages/AccountPosted';
 import Filter from './pages/Filter';
 import Search from './pages/Search';

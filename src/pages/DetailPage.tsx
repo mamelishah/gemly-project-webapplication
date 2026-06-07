@@ -4,41 +4,36 @@ import TopBar from "../components/ui/layout/TopBar";
 import DetailCard from "../components/cards/DetailCard";
 import LeftArrow from "/src/assets/icons/navigation/arrowLeftBig-icon.svg";
 
+import {getPostById, getImagesByPostId} from "../services/getOnePost"
+import PostModal from "../components/ui/layout/modals/PostModal";
 
-const BASE_URL = import.meta.env.VITE_SUPABASE_URL;
-const APIKEY = import.meta.env.VITE_SUPABASE_APIKEY;
-const headers = { apikey: APIKEY, Authorization: `Bearer ${APIKEY}` };
 
 function DetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState<any>(null);
+   const [showPopup, setShowPopup] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  useEffect(() => {
-    async function fetchPost() {
+useEffect(() => {
+    if (!id) return;
+
+    async function loadPost() {
       try {
-        const url = `${BASE_URL}post_users?id=eq.${id}&select=*,post_images(image)`;
-        const response = await fetch(url, { headers });
-        const data = await response.json();
-        if (data[0]) setPost(data[0]);
+        const data = await getPostById(id!);
+        if (data) setPost(data);
+
+        const images = await getImagesByPostId(id!);
+        console.log("Images:", images);
       } catch (err) {
-        console.log(err);
+        setIsSuccess(false)
+        setShowPopup(true);
+        setTimeout(() => setShowPopup(false), 2500);
+
       }
     }
-    async function fetchImages() {
-    try {
-      const url = `${BASE_URL}post_images?post_id=eq.${id}`;
-      const response = await fetch(url, { headers });
-      const data = await response.json();
-      console.log("Images:", data);
-    } catch (err) {
-      console.log(err);
-    }
-  }
-    if (id){
-      fetchPost();
-          fetchImages();
-    } 
+
+    loadPost();
   }, [id]);
 
   if (!post) return null;
@@ -66,6 +61,12 @@ function DetailPage() {
           location={post.country}
         />
       </div>
+           {showPopup && (
+        <PostModal
+          isSuccesfull={isSuccess}
+          message="Kunne ikke hente opslaget"
+        />
+      )}
     </div>
   );
 }

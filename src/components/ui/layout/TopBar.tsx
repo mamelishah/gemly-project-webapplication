@@ -1,7 +1,4 @@
 import "./TopBar.css";
-import arrowLeftIcon from "/src/assets/icons/navigation/arrowLeftBig-icon.svg";
-import cancelIcon from "/src/assets/icons/navigation/cancelBig-icon.svg";
-
 
 interface TopBarProps {
   title: string;

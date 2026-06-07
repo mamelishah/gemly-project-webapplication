@@ -15,8 +15,6 @@ type PostCategoryCardProps = {
   onSelect: (value: string) => void;
 };
 
-
-
 function PostCategoryCard({ categoryIcon, title, icon, options, onSelect }: PostCategoryCardProps) {  const [searchQuery, setSearchQuery] = useState("");
 const [isModalOpen, setIsModalOpen] = useState(false);
 const [selectedCountry, setSelectedCountry] = useState<Option | null>(null);

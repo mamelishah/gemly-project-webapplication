@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./SearchBar.css";
 import cancelIcon from "/src/assets/icons/navigation/cancelBig-icon.svg";
 import searchIcon from "/src/assets/icons/navbar/search-icon.svg";
-import { useNavigate } from "react-router";
 
 
 interface searchBarProps {
@@ -15,11 +14,7 @@ interface searchBarProps {
 
 function SearchBar({ showCancelIcon, placeholderText, onclickMethod, onBackClickMethod }: searchBarProps) {
   const [searchQuery, setSearchQuery] = useState("");
-  const navigate = useNavigate();
 
-  const handleClear = () => {
-      navigate(-1);
-  };
 
   const handleSearch = (e: { preventDefault: () => void }) => {
     e.preventDefault();
