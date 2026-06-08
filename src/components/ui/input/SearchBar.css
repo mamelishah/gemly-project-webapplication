@@ -19,6 +19,7 @@
 
 #search-input:focus {
   outline: none;
+  color: none;
 }
 
 .searchbar {
