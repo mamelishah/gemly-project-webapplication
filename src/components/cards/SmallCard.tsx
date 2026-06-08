@@ -1,54 +1,100 @@
 import { useNavigate } from "react-router-dom";
-import { useState} from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 import "./SmallCard.css";
 import nearYou from "/src/assets/icons/Sortér efter/nearYou-icon.svg";
 import MenuIcon from "/src/assets/icons/navigation/3Dots-icon.svg";
 
 import DeleteIcon from "/src/assets/icons/EditAndDelete/delete-icon.svg";
-import EditIcon from "/src/assets/icons/EditAndDelete/edit-icon.svg"
+import EditIcon from "/src/assets/icons/EditAndDelete/edit-icon.svg";
 
 interface SmallCardProp {
-  id: string; 
+  id: string;
   image: string;
   title: string;
   pinIcon: string;
   location: string;
   showBookmarkIcon: boolean;
   onDelete?: () => void;
+  disableNavigation?: boolean;
 }
 
-function SmallCard({ id, image, title, pinIcon, location, showBookmarkIcon, onDelete }: SmallCardProp) {  const navigate = useNavigate();
+function SmallCard({
+  id,
+  image,
+  title,
+  pinIcon,
+  location,
+  showBookmarkIcon,
+  onDelete,
+  disableNavigation = false,
+}: SmallCardProp) {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleClick = () => {
+    if (disableNavigation) return;
     navigate(`/detail/${id}`);
   };
 
   return (
-    <section id="small-card" onClick={handleClick}>
+    <section
+      id="small-card"
+      onClick={handleClick}
+      style={{ cursor: disableNavigation ? "default" : "pointer" }}
+    >
       {showBookmarkIcon ? null : (
         <div className="menu-button-container">
-          <button onClick={(e) => { e.stopPropagation(); setMenuOpen(true); }}>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setMenuOpen(true);
+            }}
+          >
             <img src={MenuIcon} />
           </button>
         </div>
       )}
 
-      {menuOpen && createPortal(
-  <div className="bottom-sheet-overlay" onClick={(e) => { e.stopPropagation(); setMenuOpen(false); }}>
-    <div className="bottom-sheet" onClick={(e) => e.stopPropagation()}>
-      <div className="bottom-sheet-handle" />
-      <button className="bottom-sheet-item" onClick={() => { setMenuOpen(false); navigate(`/edit-post/${id}`);; }}>
-        <span><img src={EditIcon} alt="" /></span> Redigere opslaget
-      </button>
-      <button className="bottom-sheet-item" onClick={() => { setMenuOpen(false); onDelete?.(); }}>
-  <span><img src={DeleteIcon} alt="" /></span> Slet opslaget
-</button>
-    </div>
-  </div>,
-  document.body
-)}
+      {menuOpen &&
+        createPortal(
+          <div
+            className="bottom-sheet-overlay"
+            onClick={(e) => {
+              e.stopPropagation();
+              setMenuOpen(false);
+            }}
+          >
+            <div className="bottom-sheet" onClick={(e) => e.stopPropagation()}>
+              <div className="bottom-sheet-handle" />
+              <button
+                className="bottom-sheet-item"
+                onClick={() => {
+                  setMenuOpen(false);
+                  navigate(`/edit-post/${id}`);
+                }}
+              >
+                <span>
+                  <img src={EditIcon} alt="" />
+                </span>{" "}
+                Redigere opslaget
+              </button>
+              <button
+                className="bottom-sheet-item"
+                onClick={() => {
+                  setMenuOpen(false);
+                  onDelete?.();
+                }}
+              >
+                <span>
+                  <img src={DeleteIcon} alt="" />
+                </span>{" "}
+                Slet opslaget
+              </button>
+            </div>
+          </div>,
+          document.body,
+        )}
 
       <img id="small-card-main-image" src={image} alt="Image" />
       <div id="small-card-content">

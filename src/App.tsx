@@ -13,7 +13,6 @@ import Onboarding from './pages/onboarding/Onboarding';
 import Preboarding from './pages/Preboarding';
 import Account from './pages/Account';
 import EditPost from './pages/EditPost';
-import DetailPage from './pages/DetailPage';
 
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
       <Route path="/onboarding" element={<Onboarding />} />
       <Route path="/preboarding" element={<Preboarding />} />
       <Route path="/edit-post/:id" element={<EditPost />} />
-      <Route path="/detail/:id" element={<DetailPage />} />
     </Routes>
   );
 }
